@@ -13,7 +13,6 @@
 		1D22F0231D36BEDF00522964 /* ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22F00E1D36BEDF00522964 /* ImageViewer.swift */; };
 		1D22F0301D36C3AA00522964 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22F02F1D36C3AA00522964 /* Photo.swift */; };
 		1D22F0431D36D05A00522964 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D22F0321D36D05A00522964 /* AppDelegate.swift */; };
-		1D22F0441D36D05A00522964 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D22F0331D36D05A00522964 /* Info.plist */; };
 		1D22F0451D36D05A00522964 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1D22F0341D36D05A00522964 /* Podfile */; };
 		1D22F04D1D36D05A00522964 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D22F03F1D36D05A00522964 /* LaunchScreen.storyboard */; };
 		1D22F04E1D36D05A00522964 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D22F0411D36D05A00522964 /* Main.storyboard */; };
@@ -45,6 +44,7 @@
 		1DD677D41D3C19B200462456 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD677D31D3C19B200462456 /* CartManager.swift */; };
 		1DD677D61D3C241D00462456 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD677D51D3C241D00462456 /* DetailViewController.swift */; };
 		29B0CB0C9E6C392CF64C0B85 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 056A089E27591B2D317AF7BD /* Pods.framework */; };
+		6A0621381D427D5C00CAB855 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A0621371D427D5C00CAB855 /* Info.plist */; };
 		93F0E8AF8940E81A4C010068 /* libPods-WoodsWholesaleWine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E68107429E92C54F3191C1D9 /* libPods-WoodsWholesaleWine.a */; };
 /* End PBXBuildFile section */
 
@@ -74,9 +74,7 @@
 		1D22F00E1D36BEDF00522964 /* ImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewer.swift; sourceTree = "<group>"; };
 		1D22F02F1D36C3AA00522964 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		1D22F0321D36D05A00522964 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1D22F0331D36D05A00522964 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D22F0341D36D05A00522964 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		1D22F0351D36D05A00522964 /* WoodsWholesaleWine-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WoodsWholesaleWine-Bridging-Header.h"; sourceTree = "<group>"; };
 		1D22F0401D36D05A00522964 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D22F0421D36D05A00522964 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D22F0521D36D0C400522964 /* DashboardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
@@ -112,6 +110,8 @@
 		1DD677D31D3C19B200462456 /* CartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
 		1DD677D51D3C241D00462456 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Dashboard/DetailViewController.swift; sourceTree = "<group>"; };
 		3B5CE882E9B27847946D6249 /* Pods-WoodsWholesaleWine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoodsWholesaleWine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WoodsWholesaleWine/Pods-WoodsWholesaleWine.debug.xcconfig"; sourceTree = "<group>"; };
+		6A0621341D4274DF00CAB855 /* WoodsWholesaleWine-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WoodsWholesaleWine-Bridging-Header.h"; sourceTree = "<group>"; };
+		6A0621371D427D5C00CAB855 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E68107429E92C54F3191C1D9 /* libPods-WoodsWholesaleWine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WoodsWholesaleWine.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -175,9 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				1D22F0321D36D05A00522964 /* AppDelegate.swift */,
-				1D22F0331D36D05A00522964 /* Info.plist */,
 				1D22F0341D36D05A00522964 /* Podfile */,
-				1D22F0351D36D05A00522964 /* WoodsWholesaleWine-Bridging-Header.h */,
+				6A0621371D427D5C00CAB855 /* Info.plist */,
 				1D22F0611D36D3F100522964 /* Assets.xcassets */,
 			);
 			path = Application;
@@ -276,6 +275,7 @@
 				1D3AF4011D2D33D900CBECB0 /* Products */,
 				4E07C120571016B712A1D81C /* Pods */,
 				BE3966D4D1340370868F3FBE /* Frameworks */,
+				6A0621341D4274DF00CAB855 /* WoodsWholesaleWine-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -471,8 +471,8 @@
 				1D22F0451D36D05A00522964 /* Podfile in Resources */,
 				1D2ED0011D4002FB00586861 /* Orders.storyboard in Resources */,
 				1D22F05C1D36D0C400522964 /* DashboardHeaderView.xib in Resources */,
-				1D22F0441D36D05A00522964 /* Info.plist in Resources */,
 				1D2ECFFD1D4002EA00586861 /* Account.storyboard in Resources */,
+				6A0621381D427D5C00CAB855 /* Info.plist in Resources */,
 				1D2ECFFF1D4002F300586861 /* Cart.storyboard in Resources */,
 				1DD677CA1D3BA7D000462456 /* LeftMenu.storyboard in Resources */,
 			);
@@ -720,7 +720,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.woodswholesalewine.ioschannel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/pavangopal/Desktop/WoodsWholesaleWine/WoodsWholesaleWine/Application/WoodsWholesaleWine-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/InctureMac/Desktop/woodswine/WoodsWholesaleWine-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -737,7 +737,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.woodswholesalewine.ioschannel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/pavangopal/Desktop/WoodsWholesaleWine/WoodsWholesaleWine/Application/WoodsWholesaleWine-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/InctureMac/Desktop/woodswine/WoodsWholesaleWine-Bridging-Header.h";
 			};
 			name = Release;
 		};
