@@ -28,43 +28,22 @@
                                     <action selector="LinkedInLoginButtonPressed:" destination="j22-SQ-ZtO" eventType="touchUpInside" id="lp3-24-b89"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfw-N6-cUy">
-                                <rect key="frame" x="214" y="157" width="173" height="30"/>
-                                <state key="normal" title="Get my profile URL"/>
-                                <connections>
-                                    <action selector="getProfileInfo:" destination="j22-SQ-ZtO" eventType="touchUpInside" id="QAv-eI-7oU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="A3c-dq-Tjk">
-                                <rect key="frame" x="20" y="210" width="560" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="dRs-vU-Z2s"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.99607843139999996" green="0.38823529410000002" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="openProfileInSafari:" destination="j22-SQ-ZtO" eventType="touchUpInside" id="9YO-hJ-O3R"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87L-OP-7pB" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="242" y="174" width="117" height="30"/>
+                                <state key="normal" title="Facebook Sign in"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cfw-N6-cUy" firstAttribute="top" secondItem="ZAX-65-O4v" secondAttribute="bottom" constant="8" symbolic="YES" id="38C-a2-MJ2"/>
+                            <constraint firstItem="ZAX-65-O4v" firstAttribute="centerX" secondItem="PPV-zx-1uk" secondAttribute="centerX" id="0je-E3-rfc"/>
                             <constraint firstItem="ZAX-65-O4v" firstAttribute="top" secondItem="8O0-Qx-h5Y" secondAttribute="bottom" constant="99" id="6m2-6T-8sR"/>
-                            <constraint firstItem="ZAX-65-O4v" firstAttribute="leading" secondItem="cfw-N6-cUy" secondAttribute="leading" id="Jgo-hs-HuQ"/>
-                            <constraint firstItem="A3c-dq-Tjk" firstAttribute="top" secondItem="cfw-N6-cUy" secondAttribute="bottom" constant="23" id="MOH-eI-t1i"/>
-                            <constraint firstItem="A3c-dq-Tjk" firstAttribute="centerX" secondItem="cfw-N6-cUy" secondAttribute="centerX" id="MdO-oQ-zWn"/>
-                            <constraint firstItem="A3c-dq-Tjk" firstAttribute="leading" secondItem="PPV-zx-1uk" secondAttribute="leadingMargin" id="fXN-7v-WQH"/>
-                            <constraint firstItem="cfw-N6-cUy" firstAttribute="trailing" secondItem="ZAX-65-O4v" secondAttribute="trailing" id="nFb-ZM-pEM"/>
-                            <constraint firstItem="A3c-dq-Tjk" firstAttribute="trailing" secondItem="PPV-zx-1uk" secondAttribute="trailingMargin" id="uDK-zE-Hnq"/>
+                            <constraint firstItem="87L-OP-7pB" firstAttribute="top" secondItem="ZAX-65-O4v" secondAttribute="bottom" constant="25" id="dME-hc-kVW"/>
+                            <constraint firstItem="87L-OP-7pB" firstAttribute="centerX" secondItem="ZAX-65-O4v" secondAttribute="centerX" id="y9N-VH-Csq"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnGetProfileInfo" destination="cfw-N6-cUy" id="YLZ-Fg-gmI"/>
-                        <outlet property="btnOpenProfile" destination="A3c-dq-Tjk" id="4Jf-kN-PTS"/>
                         <outlet property="btnSignIn" destination="ZAX-65-O4v" id="z89-Sg-yMo"/>
+                        <outlet property="facebookLoginButton" destination="87L-OP-7pB" id="EdE-qA-om2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uiq-rr-3SG" sceneMemberID="firstResponder"/>

@@ -14,7 +14,7 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if !checkForExistingAccessToken(){
+        if UserDefaults.facebookAccessToken() == nil && UserDefaults.linkedInAccessToken() == nil{ 
             launchLoginController()
         }
         else{
@@ -44,14 +44,7 @@ class FirstViewController: UIViewController {
         addViewController(tabBarContainer!)
     }
     
-    func checkForExistingAccessToken() -> Bool {
-        if NSUserDefaults.standardUserDefaults().objectForKey("LIAccessToken") != nil {
-            return true
-        }
-        else{
-            return false
-        }
-    }
+    
     
 }
 

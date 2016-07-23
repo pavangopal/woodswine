@@ -126,10 +126,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
                     let dataDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
                     
                     let accessToken = dataDictionary["access_token"] as! String
-                    
-                    NSUserDefaults.standardUserDefaults().setObject(accessToken, forKey: "LIAccessToken")
-                    NSUserDefaults.standardUserDefaults().synchronize()
-                    
+                    UserDefaults.setLinkedInAccessToken(accessToken)
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         if self.webViewCompletionHandler != nil {
                             self.dismissViewControllerAnimated(true, completion: nil)

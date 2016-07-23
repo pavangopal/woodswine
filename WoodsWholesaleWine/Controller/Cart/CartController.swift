@@ -16,6 +16,7 @@ class CartController: UIViewController {
 
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
+        updateLeftNavBarItems()
         // Do any additional setup after loading the view.
     }
 
@@ -24,7 +25,22 @@ class CartController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    func updateLeftNavBarItems() {
+        
+        let menuItem = UIBarButtonItem.init(title: "Clear", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CartController.clearCartButtonPressed))
+        
+        
+        navigationItem.leftBarButtonItems = [menuItem]
+    }
+    
+    func clearCartButtonPressed(){
+        CartManager.instance.clearCart()
+        tableView.reloadData()
+    }
 }
 
 extension CartController : UITableViewDelegate,UITableViewDataSource{
@@ -36,7 +52,7 @@ extension CartController : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section{
-        case 0: return 2
+        case 0: return(CartManager.instance.lineItems.count > 0) ?  CartManager.instance.lineItems.count :  0
         case 1: return 3
         case 2 : return 4
         case 3: return 1
