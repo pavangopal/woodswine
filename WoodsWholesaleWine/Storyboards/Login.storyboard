@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login Controller-->
+        <scene sceneID="DXS-EX-qA0">
+            <objects>
+                <viewController storyboardIdentifier="LoginController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j22-SQ-ZtO" customClass="LoginController" customModule="WoodsWholesaleWine" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8O0-Qx-h5Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="LEb-bn-bzF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PPV-zx-1uk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAX-65-O4v">
+                                <rect key="frame" x="214" y="119" width="173" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="173" id="62d-b1-kQK"/>
+                                </constraints>
+                                <state key="normal" title="LinkedIn Sign in"/>
+                                <connections>
+                                    <action selector="LinkedInLoginButtonPressed:" destination="j22-SQ-ZtO" eventType="touchUpInside" id="lp3-24-b89"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfw-N6-cUy">
+                                <rect key="frame" x="214" y="157" width="173" height="30"/>
+                                <state key="normal" title="Get my profile URL"/>
+                                <connections>
+                                    <action selector="getProfileInfo:" destination="j22-SQ-ZtO" eventType="touchUpInside" id="QAv-eI-7oU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="A3c-dq-Tjk">
+                                <rect key="frame" x="20" y="210" width="560" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dRs-vU-Z2s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.99607843139999996" green="0.38823529410000002" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="openProfileInSafari:" destination="j22-SQ-ZtO" eventType="touchUpInside" id="9YO-hJ-O3R"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cfw-N6-cUy" firstAttribute="top" secondItem="ZAX-65-O4v" secondAttribute="bottom" constant="8" symbolic="YES" id="38C-a2-MJ2"/>
+                            <constraint firstItem="ZAX-65-O4v" firstAttribute="top" secondItem="8O0-Qx-h5Y" secondAttribute="bottom" constant="99" id="6m2-6T-8sR"/>
+                            <constraint firstItem="ZAX-65-O4v" firstAttribute="leading" secondItem="cfw-N6-cUy" secondAttribute="leading" id="Jgo-hs-HuQ"/>
+                            <constraint firstItem="A3c-dq-Tjk" firstAttribute="top" secondItem="cfw-N6-cUy" secondAttribute="bottom" constant="23" id="MOH-eI-t1i"/>
+                            <constraint firstItem="A3c-dq-Tjk" firstAttribute="centerX" secondItem="cfw-N6-cUy" secondAttribute="centerX" id="MdO-oQ-zWn"/>
+                            <constraint firstItem="A3c-dq-Tjk" firstAttribute="leading" secondItem="PPV-zx-1uk" secondAttribute="leadingMargin" id="fXN-7v-WQH"/>
+                            <constraint firstItem="cfw-N6-cUy" firstAttribute="trailing" secondItem="ZAX-65-O4v" secondAttribute="trailing" id="nFb-ZM-pEM"/>
+                            <constraint firstItem="A3c-dq-Tjk" firstAttribute="trailing" secondItem="PPV-zx-1uk" secondAttribute="trailingMargin" id="uDK-zE-Hnq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnGetProfileInfo" destination="cfw-N6-cUy" id="YLZ-Fg-gmI"/>
+                        <outlet property="btnOpenProfile" destination="A3c-dq-Tjk" id="4Jf-kN-PTS"/>
+                        <outlet property="btnSignIn" destination="ZAX-65-O4v" id="z89-Sg-yMo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uiq-rr-3SG" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="a4L-K7-94a">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8AN-U6-kHE" customClass="WebViewController" customModule="WoodsWholesaleWine" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yhZ-iN-psU"/>
+                        <viewControllerLayoutGuide type="bottom" id="HDI-6s-4dA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fvy-yE-XkG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIv-2F-gfg">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="UuP-Xq-r4F"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="stop" id="Tr3-7U-PRg">
+                                        <connections>
+                                            <action selector="dismiss:" destination="8AN-U6-kHE" id="T6k-95-5uz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQJ-VL-3rG">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="MQJ-VL-3rG" secondAttribute="trailing" constant="-20" id="38A-qJ-Cel"/>
+                            <constraint firstItem="aIv-2F-gfg" firstAttribute="top" secondItem="yhZ-iN-psU" secondAttribute="bottom" id="90G-zO-Ka8"/>
+                            <constraint firstItem="aIv-2F-gfg" firstAttribute="leading" secondItem="fvy-yE-XkG" secondAttribute="leadingMargin" constant="-20" id="P3Z-64-fQI"/>
+                            <constraint firstItem="MQJ-VL-3rG" firstAttribute="leading" secondItem="fvy-yE-XkG" secondAttribute="leadingMargin" constant="-20" id="Pty-hk-RiU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aIv-2F-gfg" secondAttribute="trailing" constant="-20" id="QfY-aO-YeY"/>
+                            <constraint firstItem="HDI-6s-4dA" firstAttribute="top" secondItem="MQJ-VL-3rG" secondAttribute="bottom" id="Tvk-Dr-BZu"/>
+                            <constraint firstItem="MQJ-VL-3rG" firstAttribute="top" secondItem="aIv-2F-gfg" secondAttribute="bottom" id="vDD-5A-ja4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="MQJ-VL-3rG" id="0Q4-sl-hMs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ShE-dA-pxp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1087" y="257"/>
+        </scene>
+    </scenes>
+</document>
