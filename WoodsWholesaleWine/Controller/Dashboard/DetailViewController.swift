@@ -39,6 +39,7 @@ extension DetailViewController:UICollectionViewDelegate,UICollectionViewDataSour
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let detailCell = collectionView.dequeueReusableCellWithReuseIdentifier("DetailCell", forIndexPath: indexPath) as! DetailCell
+        
         return detailCell
     }
     
@@ -62,14 +63,7 @@ extension DetailViewController:UICollectionViewDelegate,UICollectionViewDataSour
         }
     }
     
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//       
-//        let font = UIFont.systemFontOfSize(13)
-//        
-////        collectionView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0,1)))
-//
-//        return CGSize(width: collectionView.frame.width, height: Helper.heightForText(font, width: collectionView.frame.width, text: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. .") + 304)
-//    }
-  
+    
+
     
 }

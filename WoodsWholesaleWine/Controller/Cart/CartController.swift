@@ -39,11 +39,12 @@ class CartController: UIViewController {
     
     func clearCartButtonPressed(){
         CartManager.instance.clearCart()
+        
         tableView.reloadData()
     }
 }
 
-extension CartController : UITableViewDelegate,UITableViewDataSource{
+extension CartController : UITableViewDelegate,UITableViewDataSource,CartCellDelegate{
     
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -66,13 +67,17 @@ extension CartController : UITableViewDelegate,UITableViewDataSource{
         
         switch indexPath.section {
         case 0:
-            let cartCell = tableView.dequeueReusableCellWithIdentifier("CartCell", forIndexPath: indexPath)
+            let cartCell = tableView.dequeueReusableCellWithIdentifier("CartCell", forIndexPath: indexPath) as! CartCell
+            cartCell.delegate = self
+            cartCell.updateCellData(CartManager.instance.lineItems[indexPath.row])
             return cartCell
         case 1:
-            let priceCell = tableView.dequeueReusableCellWithIdentifier("PriceCell", forIndexPath: indexPath)
+            let priceCell = tableView.dequeueReusableCellWithIdentifier("PriceCell", forIndexPath: indexPath) as! PriceCell
+            priceCell.updatePriceCelWithData(indexPath.row)
             return priceCell
         case 2:
-            let couponCell = tableView.dequeueReusableCellWithIdentifier("CouponCell", forIndexPath: indexPath)
+            let couponCell = tableView.dequeueReusableCellWithIdentifier("CouponCell", forIndexPath: indexPath) as! CouponCell
+            couponCell.updateCouponCellWithData(indexPath.row)
             return couponCell
         case 3 :
             let addressCell = tableView.dequeueReusableCellWithIdentifier("AddressCell", forIndexPath: indexPath)
@@ -84,5 +89,9 @@ extension CartController : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0
+    }
+    
+    func updateCart(){
+        tableView.reloadData()
     }
 }

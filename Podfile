@@ -5,6 +5,7 @@ pod 'ReachabilitySwift'
 pod 'SKPhotoBrowser'
 pod 'BRYXBanner'
 pod "Mobile-Buy-SDK"
+pod 'Cosmos', '~> 3.0'
 
 use_frameworks!
 

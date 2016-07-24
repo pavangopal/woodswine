@@ -21,17 +21,17 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="522"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CartCell" rowHeight="80" id="fbt-lZ-sci">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CartCell" rowHeight="80" id="fbt-lZ-sci" customClass="CartCell" customModule="WoodsWholesaleWine" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fbt-lZ-sci" id="Rvq-wJ-244">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voK-yo-NHW">
-                                                    <rect key="frame" x="16" y="29" width="443" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="voK-yo-NHW">
+                                                    <rect key="frame" x="16" y="8" width="443" height="63"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.23943965519999999" green="0.24100215520000001" blue="0.26279633619999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJs-Yp-1g5">
@@ -40,22 +40,32 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bog-3e-Vg4">
                                                             <rect key="frame" x="41" y="10" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.23943965519999999" green="0.24100215520000001" blue="0.26279633619999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qko-7a-Mhp">
                                                             <rect key="frame" x="8" y="37" width="30" height="31"/>
-                                                            <state key="normal" title="+"/>
+                                                            <state key="normal" title="+">
+                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="addToCartButtonPressed:" destination="fbt-lZ-sci" eventType="touchUpInside" id="H1Z-N9-B4R"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2x-78-10O">
                                                             <rect key="frame" x="87" y="37" width="30" height="31"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <state key="normal" title="-"/>
+                                                            <state key="normal" title="-">
+                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="deleteFromCartButtonPressed:" destination="fbt-lZ-sci" eventType="touchUpInside" id="gvm-Et-KlM"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGc-a9-Idw">
                                                             <rect key="frame" x="53" y="42" width="18" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.23943965519999999" green="0.24100215520000001" blue="0.26279633619999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -79,18 +89,30 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="voK-yo-NHW" firstAttribute="top" secondItem="Rvq-wJ-244" secondAttribute="top" constant="29" id="0B1-Ql-1aS"/>
-                                                <constraint firstAttribute="bottom" secondItem="voK-yo-NHW" secondAttribute="bottom" constant="29" id="GSm-s7-3ri"/>
                                                 <constraint firstItem="voK-yo-NHW" firstAttribute="leading" secondItem="Rvq-wJ-244" secondAttribute="leading" constant="16" id="L2k-6q-3aO"/>
+                                                <constraint firstItem="voK-yo-NHW" firstAttribute="top" secondItem="Rvq-wJ-244" secondAttribute="top" constant="8" id="OOl-Ct-3zd"/>
                                                 <constraint firstAttribute="bottom" secondItem="LJs-Yp-1g5" secondAttribute="bottom" constant="1" id="fot-iv-HgG"/>
+                                                <constraint firstAttribute="bottom" secondItem="voK-yo-NHW" secondAttribute="bottom" constant="8" id="hyA-3Z-91t"/>
                                                 <constraint firstItem="LJs-Yp-1g5" firstAttribute="top" secondItem="Rvq-wJ-244" secondAttribute="top" id="jPQ-zM-ybu"/>
                                                 <constraint firstAttribute="trailing" secondItem="LJs-Yp-1g5" secondAttribute="trailing" constant="8" id="o2B-1D-K1f"/>
                                                 <constraint firstItem="LJs-Yp-1g5" firstAttribute="leading" secondItem="voK-yo-NHW" secondAttribute="trailing" constant="8" id="tVC-wk-ABa"/>
                                                 <constraint firstItem="LJs-Yp-1g5" firstAttribute="leading" secondItem="voK-yo-NHW" secondAttribute="trailing" constant="8" id="twa-br-pFa"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="twa-br-pFa"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addToCart" destination="qko-7a-Mhp" id="frV-Lb-mNR"/>
+                                            <outlet property="deleteFromCart" destination="J2x-78-10O" id="WS1-5g-X6W"/>
+                                            <outlet property="priceLabel" destination="bog-3e-Vg4" id="9vo-i5-4dH"/>
+                                            <outlet property="productName" destination="voK-yo-NHW" id="ddS-8D-JkN"/>
+                                            <outlet property="quantityLabel" destination="RGc-a9-Idw" id="5DO-UG-8gV"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PriceCell" textLabel="1M2-kq-JfW" detailTextLabel="9vg-lx-bBa" style="IBUITableViewCellStyleValue1" id="oaz-Di-hSN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PriceCell" textLabel="1M2-kq-JfW" detailTextLabel="9vg-lx-bBa" style="IBUITableViewCellStyleValue1" id="oaz-Di-hSN" customClass="PriceCell" customModule="WoodsWholesaleWine" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="108" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oaz-Di-hSN" id="win-hn-lUG">
@@ -113,25 +135,40 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detailLabel" destination="9vg-lx-bBa" id="9nl-So-2MR"/>
+                                            <outlet property="titleLabel" destination="1M2-kq-JfW" id="shl-o3-fqa"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CouponCell" textLabel="WsT-EX-FPK" style="IBUITableViewCellStyleDefault" id="fhf-78-AIs">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CouponCell" textLabel="WsT-EX-FPK" detailTextLabel="EZ8-VI-ge2" style="IBUITableViewCellStyleValue1" id="fhf-78-AIs" customClass="CouponCell" customModule="WoodsWholesaleWine" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="152" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fhf-78-AIs" id="ocS-p6-Wxj">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WsT-EX-FPK">
-                                                    <rect key="frame" x="15" y="0.0" width="550" height="43"/>
+                                                    <rect key="frame" x="15" y="12" width="32" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EZ8-VI-ge2">
+                                                    <rect key="frame" x="543" y="12" width="42" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detailLabel" destination="EZ8-VI-ge2" id="uh2-bd-Cq2"/>
+                                            <outlet property="titleLabel" destination="WsT-EX-FPK" id="zty-ge-ttF"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddressCell" rowHeight="150" id="4CN-DX-sCe">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddressCell" rowHeight="150" id="4CN-DX-sCe" customClass="AddressCell" customModule="WoodsWholesaleWine" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="196" width="600" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4CN-DX-sCe" id="ov5-fO-3zZ">
@@ -149,6 +186,9 @@
                                                     <state key="normal" title="Add New">
                                                         <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="addNewAddressButtonPressed:" destination="4CN-DX-sCe" eventType="touchUpInside" id="df7-aH-V1y"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQj-JO-mdm" userLabel="LineView">
                                                     <rect key="frame" x="0.0" y="39" width="600" height="1"/>
@@ -232,6 +272,12 @@
                                                 <constraint firstItem="FV4-fc-yQo" firstAttribute="top" secondItem="ov5-fO-3zZ" secondAttribute="top" constant="6" id="zXR-nY-z6P"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addressLabel" destination="k0a-yh-cjJ" id="RzR-Qu-wKa"/>
+                                            <outlet property="emailLabel" destination="fjJ-ZA-gfu" id="FWx-QT-zHw"/>
+                                            <outlet property="phoneNumberLabel" destination="Qii-kp-2Ak" id="gL6-db-kOJ"/>
+                                            <outlet property="selectAddressLabel" destination="6Cl-XR-iuF" id="IRL-lb-llG"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -250,6 +296,11 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="Proceed to checkout"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="mmU-X3-pQP"/>
+                                            </mask>
+                                        </variation>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3z2-YU-B04">
                                         <rect key="frame" x="312" y="10" width="262" height="30"/>
@@ -259,6 +310,11 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="Buy With Apple Pay"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="r5x-dH-6ur"/>
+                                            </mask>
+                                        </variation>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>

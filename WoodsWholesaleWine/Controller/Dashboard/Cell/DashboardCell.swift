@@ -9,12 +9,6 @@
 import UIKit
 import Buy
 
-
-
-protocol DashboardCellProtocol {
-    func updateCart(productVarient:BUYProductVariant?,add:Bool,delete:Bool)
-}
-
 class DashboardCell: UICollectionViewCell {
 
     @IBOutlet weak var priceLabel: UILabel!
@@ -26,10 +20,7 @@ class DashboardCell: UICollectionViewCell {
     
     
     var productVariant : BUYProductVariant?
-//    let cart = BUYCart()
-    var delegate : DashboardCellProtocol?
 
-    
     override func awakeFromNib() {
         
         super.awakeFromNib()
@@ -63,13 +54,13 @@ class DashboardCell: UICollectionViewCell {
     }
     
     @IBAction func addToCartButtonPressed(sender: UIButton) {
-        delegate?.updateCart(productVariant,add: true,delete: false)
+        CartManager.instance.addProductVarientToCart(productVariant)
         
     }
     
 
     @IBAction func deleteFromCartButtonPressed(sender: UIButton) {
-        delegate?.updateCart(productVariant,add:false,delete:true)
+        CartManager.instance.deleteProductVarientFromCart(productVariant)
 
     }
     

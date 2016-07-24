@@ -278,6 +278,21 @@ class Helper {
         return ceil(rect.height + 16)
     }
 
+    class func getDescriptionFromHtml(html : String?) ->  NSAttributedString? {
+        guard let unwrappedHtml = html else{
+            return nil
+        }
+            let font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        var attributedString =  NSAttributedString()
+        do {
+             attributedString = try NSAttributedString(data: html!.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true)!, options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
+
+        } catch  {
+            print(error)
+        }
+        return attributedString
+    }
+
 }
 
 func compressedDataForImage(image: UIImage?) -> UIImage? {
