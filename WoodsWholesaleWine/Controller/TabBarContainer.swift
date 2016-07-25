@@ -51,7 +51,7 @@ class TabBarContainer: UIViewController {
                 
             else if (tabName == "\(TabName.Cart)") {
             // launch card controller
-                let tabItem = UITabBarItem.init(title: tabName, image: AssetImage.cherry.image, tag: index)
+                let tabItem = UITabBarItem.init(title: tabName, image: AssetImage.cart.image, tag: index)
                 
                 let cartController = UIStoryboard.cartStoryboard().instantiateViewControllerWithIdentifier(String(CartController)) as! CartController
                 cartController.tabBarItem = tabItem
@@ -63,7 +63,7 @@ class TabBarContainer: UIViewController {
                 
             else if (tabName == "\(TabName.Orders)") {
                // launch Orders conroller
-                let tabItem = UITabBarItem.init(title: tabName, image: AssetImage.cherry.image, tag: index)
+                let tabItem = UITabBarItem.init(title: tabName, image: AssetImage.order.image, tag: index)
                 
                 let ordersController = UIStoryboard.ordersStoryboard().instantiateViewControllerWithIdentifier(String(OrdersController)) as! OrdersController
                 ordersController.tabBarItem = tabItem

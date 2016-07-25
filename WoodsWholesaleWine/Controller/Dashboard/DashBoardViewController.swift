@@ -122,11 +122,13 @@ class DashBoardViewController: UIViewController {
 }
 
 
-extension DashBoardViewController:UICollectionViewDelegate,UICollectionViewDataSource{
+extension DashBoardViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Myproducts.count
     }
+    
+    
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DashboardCell", forIndexPath: indexPath) as! DashboardCell
@@ -156,6 +158,12 @@ extension DashBoardViewController:UICollectionViewDelegate,UICollectionViewDataS
             assert(false, "Unexpected element kind")
         }
     }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let screenWidth = UIScreen.mainScreen().bounds.width
+        return CGSize(width: screenWidth/2, height: screenWidth/2 )
+    }
+
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let detailViewController = UIStoryboard.mainStoryboard().instantiateViewControllerWithIdentifier(String(DetailViewController)) as! DetailViewController

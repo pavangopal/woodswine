@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Buy
 
 class CartController: UIViewController {
 
@@ -81,6 +82,21 @@ extension CartController : UITableViewDelegate,UITableViewDataSource,CartCellDel
             return couponCell
         case 3 :
             let addressCell = tableView.dequeueReusableCellWithIdentifier("AddressCell", forIndexPath: indexPath)
+//            let dictionary = NSMutableDictionary()
+//            
+//            dictionary["address1"] = self.address1
+//            dictionary["address2"] = self.address2
+//            dictionary["city"] = self.city
+//            dictionary["company"] = self.company
+//            dictionary["first_name"] =self.firstName
+//            dictionary["last_name"] = self.lastName
+//            dictionary["phone"] = self.phone
+//            
+//            dictionary["country"] = self.country
+//            dictionary["country_code"] = self.countryCode
+//            dictionary["zip"] = self.zip
+            
+
             return addressCell
         default:
             return UITableViewCell()

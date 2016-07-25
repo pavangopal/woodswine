@@ -119,6 +119,8 @@ public enum AssetImage : String {
     case wishlist = "wishlist"
     case cherry = "cherry"
     case profile = "profile_icon"
+    case cart = "cart"
+    case order = "order"
     
    }
 

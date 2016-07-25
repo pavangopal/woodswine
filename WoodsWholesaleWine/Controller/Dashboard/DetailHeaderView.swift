@@ -121,9 +121,4 @@ class DetailHeaderView: UICollectionReusableView {
     @IBAction func wishListButtonPressed(sender: AnyObject) {
     }
     
-    
-    
-    
-    
-    
 }

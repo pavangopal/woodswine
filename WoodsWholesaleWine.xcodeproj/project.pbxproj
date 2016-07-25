@@ -52,13 +52,19 @@
 		6A6193101D43DF4A005AA8C5 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A61930D1D43DF4A005AA8C5 /* FBSDKCoreKit.framework */; };
 		6A6193111D43DF4A005AA8C5 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A61930E1D43DF4A005AA8C5 /* FBSDKLoginKit.framework */; };
 		6A6193121D43DF4A005AA8C5 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A61930F1D43DF4A005AA8C5 /* FBSDKShareKit.framework */; };
-		6A88D82C1D450096003A5FF1 /* Pods in Resources */ = {isa = PBXBuildFile; fileRef = 6A88D82B1D450096003A5FF1 /* Pods */; };
+		6A7363C91D46A2AE007B6935 /* WoodsWholesaleWine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A7363C71D46A2AE007B6935 /* WoodsWholesaleWine.xcdatamodeld */; };
+		6A7363CB1D46A3C3007B6935 /* AddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7363CA1D46A3C3007B6935 /* AddressController.swift */; };
+		6A7363CD1D46A3FE007B6935 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7363CC1D46A3FE007B6935 /* Address.swift */; };
+		6A73640E1D46AEBB007B6935 /* AddressCreationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A73640D1D46AEBB007B6935 /* AddressCreationCell.swift */; };
 		6A88D8331D453208003A5FF1 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A88D8321D453208003A5FF1 /* CartCell.swift */; };
 		6A88D8351D454584003A5FF1 /* PriceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A88D8341D454584003A5FF1 /* PriceCell.swift */; };
 		6A88D8371D455B50003A5FF1 /* CouponCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A88D8361D455B50003A5FF1 /* CouponCell.swift */; };
 		6A88D8391D4565D8003A5FF1 /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A88D8381D4565D7003A5FF1 /* AddressCell.swift */; };
 		6AB13BA51D43EC740093BDB4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AB13BA41D43EC730093BDB4 /* Bolts.framework */; };
 		6AB13BA71D43FECD0093BDB4 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB13BA61D43FECD0093BDB4 /* UserDefaults.swift */; };
+		73B53FD250DC955951377020 /* Pods_WoodsWholesaleWineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DB8B5D98A2DEEA2C50536B /* Pods_WoodsWholesaleWineTests.framework */; };
+		C1B233306D9B1C531A8E5B48 /* Pods_WoodsWholesaleWine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A781401D8FFBF66301F7C8 /* Pods_WoodsWholesaleWine.framework */; };
+		C3D98E1BAF1D0A0B969E9F20 /* Pods_WoodsWholesaleWineUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8F164FC2ED0F3E95A89171 /* Pods_WoodsWholesaleWineUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +128,9 @@
 		1DD677D01D3C183000462456 /* LoadingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingController.xib; sourceTree = "<group>"; };
 		1DD677D31D3C19B200462456 /* CartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
 		1DD677D51D3C241D00462456 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Dashboard/DetailViewController.swift; sourceTree = "<group>"; };
+		32DB8B5D98A2DEEA2C50536B /* Pods_WoodsWholesaleWineTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WoodsWholesaleWineTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38748D5F6947D612283E51E3 /* Pods-WoodsWholesaleWine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoodsWholesaleWine.release.xcconfig"; path = "Pods/Target Support Files/Pods-WoodsWholesaleWine/Pods-WoodsWholesaleWine.release.xcconfig"; sourceTree = "<group>"; };
+		53A781401D8FFBF66301F7C8 /* Pods_WoodsWholesaleWine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WoodsWholesaleWine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A3D6C5B1D42CB1800E69E04 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		6A3D6C601D42CBA400E69E04 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		6A3D6C621D42CBC700E69E04 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -130,13 +139,22 @@
 		6A61930D1D43DF4A005AA8C5 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		6A61930E1D43DF4A005AA8C5 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		6A61930F1D43DF4A005AA8C5 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
-		6A88D82B1D450096003A5FF1 /* Pods */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Pods; sourceTree = "<group>"; };
+		6A7363C81D46A2AE007B6935 /* WoodsWholesaleWine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WoodsWholesaleWine.xcdatamodel; sourceTree = "<group>"; };
+		6A7363CA1D46A3C3007B6935 /* AddressController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressController.swift; sourceTree = "<group>"; };
+		6A7363CC1D46A3FE007B6935 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		6A73640D1D46AEBB007B6935 /* AddressCreationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressCreationCell.swift; sourceTree = "<group>"; };
 		6A88D8321D453208003A5FF1 /* CartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		6A88D8341D454584003A5FF1 /* PriceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceCell.swift; sourceTree = "<group>"; };
 		6A88D8361D455B50003A5FF1 /* CouponCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponCell.swift; sourceTree = "<group>"; };
 		6A88D8381D4565D7003A5FF1 /* AddressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
 		6AB13BA41D43EC730093BDB4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		6AB13BA61D43FECD0093BDB4 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		7028CFF09EA41BCBD056EB7D /* Pods-WoodsWholesaleWine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoodsWholesaleWine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WoodsWholesaleWine/Pods-WoodsWholesaleWine.debug.xcconfig"; sourceTree = "<group>"; };
+		8D8F164FC2ED0F3E95A89171 /* Pods_WoodsWholesaleWineUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WoodsWholesaleWineUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D35B08B8346F2C87977483ED /* Pods-WoodsWholesaleWineTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoodsWholesaleWineTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WoodsWholesaleWineTests/Pods-WoodsWholesaleWineTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E74D2100728C09A867EADA3A /* Pods-WoodsWholesaleWineUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoodsWholesaleWineUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WoodsWholesaleWineUITests/Pods-WoodsWholesaleWineUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EACCB285A47B94C3E1A61125 /* Pods-WoodsWholesaleWineUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoodsWholesaleWineUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WoodsWholesaleWineUITests/Pods-WoodsWholesaleWineUITests.release.xcconfig"; sourceTree = "<group>"; };
+		ED2DA5D0B0CF861767CA98B1 /* Pods-WoodsWholesaleWineTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoodsWholesaleWineTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WoodsWholesaleWineTests/Pods-WoodsWholesaleWineTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +166,7 @@
 				6A6193121D43DF4A005AA8C5 /* FBSDKShareKit.framework in Frameworks */,
 				6A6193101D43DF4A005AA8C5 /* FBSDKCoreKit.framework in Frameworks */,
 				6A6193111D43DF4A005AA8C5 /* FBSDKLoginKit.framework in Frameworks */,
+				C1B233306D9B1C531A8E5B48 /* Pods_WoodsWholesaleWine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73B53FD250DC955951377020 /* Pods_WoodsWholesaleWineTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +182,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3D98E1BAF1D0A0B969E9F20 /* Pods_WoodsWholesaleWineUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +305,8 @@
 			children = (
 				6A88D82F1D453195003A5FF1 /* Cell */,
 				1D2ECFF81D4002CC00586861 /* CartController.swift */,
+				6A7363CA1D46A3C3007B6935 /* AddressController.swift */,
+				6A7363CC1D46A3FE007B6935 /* Address.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -300,13 +323,14 @@
 		1D3AF3F71D2D33D900CBECB0 = {
 			isa = PBXGroup;
 			children = (
+				6A7363C71D46A2AE007B6935 /* WoodsWholesaleWine.xcdatamodeld */,
 				6A61930B1D43DCAD005AA8C5 /* header.m */,
 				1D3AF4021D2D33DA00CBECB0 /* WoodsWholesaleWine */,
 				1D3AF4171D2D33DA00CBECB0 /* WoodsWholesaleWineTests */,
 				1D3AF4221D2D33DA00CBECB0 /* WoodsWholesaleWineUITests */,
 				1D3AF4011D2D33D900CBECB0 /* Products */,
 				BE3966D4D1340370868F3FBE /* Frameworks */,
-				6A88D82B1D450096003A5FF1 /* Pods */,
+				234FA0BAE148055AD94447ED /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -368,6 +392,19 @@
 			path = Loader;
 			sourceTree = "<group>";
 		};
+		234FA0BAE148055AD94447ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7028CFF09EA41BCBD056EB7D /* Pods-WoodsWholesaleWine.debug.xcconfig */,
+				38748D5F6947D612283E51E3 /* Pods-WoodsWholesaleWine.release.xcconfig */,
+				D35B08B8346F2C87977483ED /* Pods-WoodsWholesaleWineTests.debug.xcconfig */,
+				ED2DA5D0B0CF861767CA98B1 /* Pods-WoodsWholesaleWineTests.release.xcconfig */,
+				E74D2100728C09A867EADA3A /* Pods-WoodsWholesaleWineUITests.debug.xcconfig */,
+				EACCB285A47B94C3E1A61125 /* Pods-WoodsWholesaleWineUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6A3D6C5F1D42CB8700E69E04 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +421,7 @@
 				6A88D8341D454584003A5FF1 /* PriceCell.swift */,
 				6A88D8361D455B50003A5FF1 /* CouponCell.swift */,
 				6A88D8381D4565D7003A5FF1 /* AddressCell.swift */,
+				6A73640D1D46AEBB007B6935 /* AddressCreationCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -396,6 +434,9 @@
 				6A61930D1D43DF4A005AA8C5 /* FBSDKCoreKit.framework */,
 				6A61930E1D43DF4A005AA8C5 /* FBSDKLoginKit.framework */,
 				6A61930F1D43DF4A005AA8C5 /* FBSDKShareKit.framework */,
+				53A781401D8FFBF66301F7C8 /* Pods_WoodsWholesaleWine.framework */,
+				32DB8B5D98A2DEEA2C50536B /* Pods_WoodsWholesaleWineTests.framework */,
+				8D8F164FC2ED0F3E95A89171 /* Pods_WoodsWholesaleWineUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -407,9 +448,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D3AF4281D2D33DA00CBECB0 /* Build configuration list for PBXNativeTarget "WoodsWholesaleWine" */;
 			buildPhases = (
+				3A32ECF174CDB2A849CE1685 /* [CP] Check Pods Manifest.lock */,
 				1D3AF3FC1D2D33D900CBECB0 /* Sources */,
 				1D3AF3FD1D2D33D900CBECB0 /* Frameworks */,
 				1D3AF3FE1D2D33D900CBECB0 /* Resources */,
+				C450D5A4093894599A73E34D /* [CP] Embed Pods Frameworks */,
+				AD96B1445965E77C9E6A286F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -424,9 +468,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D3AF42B1D2D33DA00CBECB0 /* Build configuration list for PBXNativeTarget "WoodsWholesaleWineTests" */;
 			buildPhases = (
+				313E4DE243F37AA3ED4B40E3 /* [CP] Check Pods Manifest.lock */,
 				1D3AF4101D2D33DA00CBECB0 /* Sources */,
 				1D3AF4111D2D33DA00CBECB0 /* Frameworks */,
 				1D3AF4121D2D33DA00CBECB0 /* Resources */,
+				5BE92D05F815A81010A07DE5 /* [CP] Embed Pods Frameworks */,
+				1EC65FDB33B521C178150C0E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -442,9 +489,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D3AF42E1D2D33DA00CBECB0 /* Build configuration list for PBXNativeTarget "WoodsWholesaleWineUITests" */;
 			buildPhases = (
+				2795513B55FF44818509F280 /* [CP] Check Pods Manifest.lock */,
 				1D3AF41B1D2D33DA00CBECB0 /* Sources */,
 				1D3AF41C1D2D33DA00CBECB0 /* Frameworks */,
 				1D3AF41D1D2D33DA00CBECB0 /* Resources */,
+				2D1B091DDE990D256311E78E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -512,7 +561,6 @@
 				1D22F0621D36D3F100522964 /* Assets.xcassets in Resources */,
 				1D22F04D1D36D05A00522964 /* LaunchScreen.storyboard in Resources */,
 				1D2ED0011D4002FB00586861 /* Orders.storyboard in Resources */,
-				6A88D82C1D450096003A5FF1 /* Pods in Resources */,
 				1D22F05C1D36D0C400522964 /* DashboardHeaderView.xib in Resources */,
 				1D22F0441D36D05A00522964 /* Info.plist in Resources */,
 				6A3D6C5C1D42CB1800E69E04 /* Login.storyboard in Resources */,
@@ -538,6 +586,129 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1EC65FDB33B521C178150C0E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WoodsWholesaleWineTests/Pods-WoodsWholesaleWineTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2795513B55FF44818509F280 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2D1B091DDE990D256311E78E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WoodsWholesaleWineUITests/Pods-WoodsWholesaleWineUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		313E4DE243F37AA3ED4B40E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3A32ECF174CDB2A849CE1685 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5BE92D05F815A81010A07DE5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WoodsWholesaleWineTests/Pods-WoodsWholesaleWineTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD96B1445965E77C9E6A286F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WoodsWholesaleWine/Pods-WoodsWholesaleWine-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C450D5A4093894599A73E34D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WoodsWholesaleWine/Pods-WoodsWholesaleWine-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1D3AF3FC1D2D33D900CBECB0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -555,16 +726,19 @@
 				1D22F0431D36D05A00522964 /* AppDelegate.swift in Sources */,
 				1D2ECFF91D4002CC00586861 /* CartController.swift in Sources */,
 				1DAC5E651D3D479D00DABB96 /* DetailHeaderView.swift in Sources */,
+				6A7363C91D46A2AE007B6935 /* WoodsWholesaleWine.xcdatamodeld in Sources */,
 				1D2ECFF71D4002BE00586861 /* AccountController.swift in Sources */,
 				6A3D6C631D42CBC700E69E04 /* WebViewController.swift in Sources */,
 				6A61930C1D43DCAD005AA8C5 /* header.m in Sources */,
 				1D22F01E1D36BEDF00522964 /* Extensions.swift in Sources */,
 				6A3D6C651D42DFD700E69E04 /* OrderCell.swift in Sources */,
+				6A7363CD1D46A3FE007B6935 /* Address.swift in Sources */,
 				1D2ECFFB1D4002DC00586861 /* OrdersController.swift in Sources */,
 				1D22F01F1D36BEDF00522964 /* Helper.swift in Sources */,
 				1D22F01D1D36BEDF00522964 /* Constants.swift in Sources */,
 				1DD677D11D3C183000462456 /* LoadingController.swift in Sources */,
 				1D22F05A1D36D0C400522964 /* DashboardLayout.swift in Sources */,
+				6A73640E1D46AEBB007B6935 /* AddressCreationCell.swift in Sources */,
 				6A88D8391D4565D8003A5FF1 /* AddressCell.swift in Sources */,
 				1D22F0301D36C3AA00522964 /* Photo.swift in Sources */,
 				1D55CF001D3EB62400CAFB18 /* CategorySectionCell.swift in Sources */,
@@ -576,6 +750,7 @@
 				1D22F0601D36D1C800522964 /* TabBarContainer.swift in Sources */,
 				1D55CF021D3EB63300CAFB18 /* CategoryRowCell.swift in Sources */,
 				6A88D8371D455B50003A5FF1 /* CouponCell.swift in Sources */,
+				6A7363CB1D46A3C3007B6935 /* AddressController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,6 +890,7 @@
 		};
 		1D3AF4291D2D33DA00CBECB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7028CFF09EA41BCBD056EB7D /* Pods-WoodsWholesaleWine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -737,6 +913,7 @@
 		};
 		1D3AF42A1D2D33DA00CBECB0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38748D5F6947D612283E51E3 /* Pods-WoodsWholesaleWine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -758,6 +935,7 @@
 		};
 		1D3AF42C1D2D33DA00CBECB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D35B08B8346F2C87977483ED /* Pods-WoodsWholesaleWineTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = WoodsWholesaleWineTests/Info.plist;
@@ -770,6 +948,7 @@
 		};
 		1D3AF42D1D2D33DA00CBECB0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED2DA5D0B0CF861767CA98B1 /* Pods-WoodsWholesaleWineTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = WoodsWholesaleWineTests/Info.plist;
@@ -782,6 +961,7 @@
 		};
 		1D3AF42F1D2D33DA00CBECB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E74D2100728C09A867EADA3A /* Pods-WoodsWholesaleWineUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = WoodsWholesaleWineUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -793,6 +973,7 @@
 		};
 		1D3AF4301D2D33DA00CBECB0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EACCB285A47B94C3E1A61125 /* Pods-WoodsWholesaleWineUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = WoodsWholesaleWineUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -842,6 +1023,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6A7363C71D46A2AE007B6935 /* WoodsWholesaleWine.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6A7363C81D46A2AE007B6935 /* WoodsWholesaleWine.xcdatamodel */,
+			);
+			currentVersion = 6A7363C81D46A2AE007B6935 /* WoodsWholesaleWine.xcdatamodel */;
+			path = WoodsWholesaleWine.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1D3AF3F81D2D33D900CBECB0 /* Project object */;
 }

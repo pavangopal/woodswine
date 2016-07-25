@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3D40B72E93BFE0CC46E708BE95F4AD50"
+               BlueprintIdentifier = "DF175009CFE6C0289A24CAB2B9275DF0"
                BuildableName = "Pods_WoodsWholesaleWine.framework"
                BlueprintName = "Pods-WoodsWholesaleWine"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3D40B72E93BFE0CC46E708BE95F4AD50"
+            BlueprintIdentifier = "DF175009CFE6C0289A24CAB2B9275DF0"
             BuildableName = "Pods_WoodsWholesaleWine.framework"
             BlueprintName = "Pods-WoodsWholesaleWine"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3D40B72E93BFE0CC46E708BE95F4AD50"
-            BuildableName = "Pods_WoodsWholesaleWine.framework"
-            BlueprintName = "Pods-WoodsWholesaleWine"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

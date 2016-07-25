@@ -6,68 +6,58 @@
 	<dict>
 		<key>Alamofire.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>BRYXBanner-BRYXBanner.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>BRYXBanner.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Mobile-Buy-SDK.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-WoodsWholesaleWine.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>7</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-WoodsWholesaleWineTests.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>8</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-WoodsWholesaleWineUITests.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>9</integer>
-		</dict>
-		<key>Pods.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>ReachabilitySwift.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>10</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SKPhotoBrowser.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>11</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3D40B72E93BFE0CC46E708BE95F4AD50</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5FE4DF0A66F3911008D50F99AEB9B92C</key>
+		<key>386D8E8EE0187BFC2C1D01EB71D00269</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,27 +67,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>762630CB6E85F511D77BAABD56141E74</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>861DFB9A07CD27B298063F582BAD9C27</key>
+		<key>CEA19E869C3BC0038641B8C88301ED09</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BF05D4CCA2A28F579BDA3493DB57F36E</key>
+		<key>DED724F1A6532ABEB493C727DAC0CC42</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D43B5142C2A9799128DC230AEC37FA9A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E238145D66B08EB03A24192DAE38B19A</key>
+		<key>DF175009CFE6C0289A24CAB2B9275DF0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,7 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ED79ACBE61ACA081C1370D25E1092504</key>
+		<key>F047765615DAFEB156EDB0324BB55207</key>
 		<dict>
 			<key>primary</key>
 			<true/>

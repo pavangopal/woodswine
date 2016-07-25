@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "861DFB9A07CD27B298063F582BAD9C27"
+               BlueprintIdentifier = "F047765615DAFEB156EDB0324BB55207"
                BuildableName = "Buy.framework"
                BlueprintName = "Mobile-Buy-SDK"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "861DFB9A07CD27B298063F582BAD9C27"
+            BlueprintIdentifier = "F047765615DAFEB156EDB0324BB55207"
             BuildableName = "Buy.framework"
             BlueprintName = "Mobile-Buy-SDK"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "861DFB9A07CD27B298063F582BAD9C27"
-            BuildableName = "Buy.framework"
-            BlueprintName = "Mobile-Buy-SDK"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

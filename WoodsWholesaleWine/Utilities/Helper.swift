@@ -12,6 +12,8 @@ import ReachabilitySwift
 
 class Helper {
     
+   static let sectionInsets = UIEdgeInsets(top: 50.0, left: 10.0, bottom: 50.0, right: 10.0)
+    
     class func clearAllCookies() {
         let storage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
         let cookies = storage.cookies
@@ -292,7 +294,113 @@ class Helper {
         }
         return attributedString
     }
+    
+   //core data
+    
+    class func AddressForDictionary(dict: NSDictionary) -> Address? {
+        
+        guard let id = dict["_id"] else {
+            return nil
+        }
+        
+        let predicate = NSPredicate(format: "id = %@", argumentArray: [id])
+        let newObject = coreDataObjectForPredicate(predicate, entityName: String(Address)) as! Address
+        
+        
+        newObject.id = id as? String
+        newObject.address1 = dict["address1"] as? String
+        newObject.city = dict["address1"] as? String
+        newObject.countryCode = dict["countryCode"] as? String
+        newObject.firstName = dict["firstName"] as? String
+        newObject.lastName = dict["lastName"] as? String
+        newObject.zip = dict["zip"] as? String
+        newObject.province = dict["province"] as? String
+        
+        return newObject
+    }
+    
+        class func coreDataObjectForPredicate(predicate: NSPredicate, entityName: String) -> AnyObject {
+            
+            let fetchRequest = NSFetchRequest(entityName:entityName)
+            fetchRequest.predicate = predicate
+            
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            
+            var result: NSArray?
+            
+            do {
+                result = try appDelegate.managedObjectContext.executeFetchRequest(fetchRequest)
+            } catch let error as NSError {
+                print("Fetch failed: \(error.localizedDescription)")
+            }
+            
+            // Return that eobject if already exists or create a new one
+            if result?.count > 0 {
+                let object: NSManagedObject = result?.firstObject as! NSManagedObject
+                return object
+                //            appDelegate.managedObjectContext.deleteObject(object)
+            }else{
+                return NSEntityDescription.insertNewObjectForEntityForName(entityName, inManagedObjectContext: appDelegate.managedObjectContext)
+            }
+        }
 
+    class func fetchAllAddress() -> [Address]{
+        let fetchRequest = NSFetchRequest(entityName: String(Address))
+        var AddressArray = [Address]()
+        
+        let sortDescriptor = NSSortDescriptor(key: "id", ascending: false)
+        let sortDescriptors = [sortDescriptor]
+        fetchRequest.sortDescriptors = sortDescriptors
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        var result: NSArray?
+        do {
+            result = try appDelegate.managedObjectContext.executeFetchRequest(fetchRequest)
+        } catch let error as NSError {
+            print("Fetch failed: \(error.localizedDescription)")
+        }
+        
+        guard let unwrappedResult = result where unwrappedResult.count > 0  else{
+            print("unwrappedResult is empty")
+            return AddressArray
+        }
+        
+        for address in unwrappedResult{
+            if let addressElement = address as? Address{
+                AddressArray.append(addressElement)
+            }
+        }
+        return AddressArray
+    }
+    
+    class func fetchAddress(forId forId : String) -> Address?{
+        
+        let fetchRequest = NSFetchRequest(entityName: String(Address))
+        
+        let predicateForId = NSPredicate(format: "id = %@", argumentArray: [forId])
+        
+        fetchRequest.predicate = predicateForId
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        var result: NSArray?
+        do {
+            result = try appDelegate.managedObjectContext.executeFetchRequest(fetchRequest)
+        } catch let error as NSError {
+            print("Fetch failed: \(error.localizedDescription)")
+        }
+        
+        guard let unwrappedResult = result where unwrappedResult.count > 0  else{
+            print("AddressArray is empty")
+            return nil
+        }
+        guard let unwrappedAddressData = unwrappedResult.firstObject as? Address else{
+            print("unwrappedAddress is empty")
+            return nil
+        }
+        
+        return unwrappedAddressData
+        
+    }
 }
 
 func compressedDataForImage(image: UIImage?) -> UIImage? {
