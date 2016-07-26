@@ -86,7 +86,7 @@ class DetailHeaderView: UICollectionReusableView {
     
     func customizeUI()
     {
-        shareButton.setImage(AssetImage.sharewine.image, forState: .Normal)
+        shareButton.setImage(AssetImage.share.image, forState: .Normal)
         shareButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 0)
         wishListButton.setImage(AssetImage.wishlist.image, forState: .Normal)
         wishListButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 0)

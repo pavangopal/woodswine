@@ -249,15 +249,15 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="N8U-5V-37v"/>
-                                                    <exclude reference="Xd7-JM-q0O"/>
-                                                    <exclude reference="sAY-06-GP4"/>
-                                                    <exclude reference="llf-ag-HIa"/>
-                                                    <exclude reference="uaq-Fo-WuU"/>
-                                                    <exclude reference="ele-wB-I0b"/>
+                                                    <exclude reference="9Aq-NL-zPq"/>
                                                     <exclude reference="GAS-YT-Df0"/>
                                                     <exclude reference="JbY-F3-a6j"/>
-                                                    <exclude reference="9Aq-NL-zPq"/>
+                                                    <exclude reference="N8U-5V-37v"/>
+                                                    <exclude reference="Xd7-JM-q0O"/>
+                                                    <exclude reference="ele-wB-I0b"/>
+                                                    <exclude reference="llf-ag-HIa"/>
+                                                    <exclude reference="sAY-06-GP4"/>
+                                                    <exclude reference="uaq-Fo-WuU"/>
                                                 </mask>
                                             </variation>
                                         </view>
@@ -653,7 +653,7 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="truck" translatesAutoresizingMaskIntoConstraints="NO" id="dSc-Od-rAm">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ordervan" translatesAutoresizingMaskIntoConstraints="NO" id="dSc-Od-rAm">
                                                             <rect key="frame" x="285" y="7" width="30" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="RYN-HG-Yol"/>
@@ -1025,9 +1025,9 @@
     <resources>
         <image name="Ardbog_grande" width="350" height="350"/>
         <image name="franceSpecial" width="460" height="288"/>
-        <image name="shipping" width="37" height="39"/>
-        <image name="truck" width="49" height="35"/>
-        <image name="ups" width="42" height="46"/>
+        <image name="ordervan" width="24" height="17"/>
+        <image name="shipping" width="24" height="25"/>
+        <image name="ups" width="24" height="31"/>
         <image name="valentinesDay" width="600" height="400"/>
     </resources>
 </document>

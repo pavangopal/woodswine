@@ -38,7 +38,7 @@ class TabBarContainer: UIViewController {
             let index:Int = tabNames.indexOf(tabName)!
             if (tabName == "\(TabName.Catalog)") {
            //launch catlog controller
-                let tabItem = UITabBarItem.init(title: tabName, image: AssetImage.cherry.image, tag: index)
+                let tabItem = UITabBarItem.init(title: tabName, image: AssetImage.catlog.image, tag: index)
                 
                 let dashBoardController = UIStoryboard.mainStoryboard().instantiateViewControllerWithIdentifier(String(DashBoardViewController)) as! DashBoardViewController
                //  let detailViewController = UIStoryboard.mainStoryboard().instantiateViewControllerWithIdentifier(String(DetailViewController)) as! DetailViewController
@@ -74,7 +74,7 @@ class TabBarContainer: UIViewController {
             }
             else{
                 //launch account controller
-                let tabItem = UITabBarItem.init(title: tabName, image: AssetImage.cherry.image, tag: index)
+                let tabItem = UITabBarItem.init(title: tabName, image: AssetImage.user.image, tag: index)
                 
                 let accountController = UIStoryboard.accountStoryboard().instantiateViewControllerWithIdentifier(String(AccountController)) as! AccountController
                 accountController.tabBarItem = tabItem

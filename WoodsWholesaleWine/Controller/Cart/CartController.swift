@@ -12,12 +12,18 @@ import Buy
 class CartController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    var addressFromCoreData : [Address]?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
         updateLeftNavBarItems()
+        addressFromCoreData = Helper.fetchAllAddress()
+        let address = Helper.fetchAddress(forId: "0")
+        
         // Do any additional setup after loading the view.
     }
 
@@ -45,7 +51,7 @@ class CartController: UIViewController {
     }
 }
 
-extension CartController : UITableViewDelegate,UITableViewDataSource,CartCellDelegate{
+extension CartController : UITableViewDelegate,UITableViewDataSource,CartCellDelegate,AddressCellDelegate{
     
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -81,22 +87,9 @@ extension CartController : UITableViewDelegate,UITableViewDataSource,CartCellDel
             couponCell.updateCouponCellWithData(indexPath.row)
             return couponCell
         case 3 :
-            let addressCell = tableView.dequeueReusableCellWithIdentifier("AddressCell", forIndexPath: indexPath)
-//            let dictionary = NSMutableDictionary()
-//            
-//            dictionary["address1"] = self.address1
-//            dictionary["address2"] = self.address2
-//            dictionary["city"] = self.city
-//            dictionary["company"] = self.company
-//            dictionary["first_name"] =self.firstName
-//            dictionary["last_name"] = self.lastName
-//            dictionary["phone"] = self.phone
-//            
-//            dictionary["country"] = self.country
-//            dictionary["country_code"] = self.countryCode
-//            dictionary["zip"] = self.zip
-            
-
+            let addressCell = tableView.dequeueReusableCellWithIdentifier("AddressCell", forIndexPath: indexPath) as! AddressCell
+            addressCell.delegate = self
+            addressCell.updateAddress(addressFromCoreData?.first)
             return addressCell
         default:
             return UITableViewCell()
@@ -109,5 +102,20 @@ extension CartController : UITableViewDelegate,UITableViewDataSource,CartCellDel
     
     func updateCart(){
         tableView.reloadData()
+    }
+    
+    func addNewAddressButtonPressed(){
+        if addressFromCoreData?.count > 0{
+            let addressSelectionController = UIStoryboard.cartStoryboard().instantiateViewControllerWithIdentifier(String(AddressSelectionController)) as! AddressSelectionController
+            addressSelectionController.addressObjects = addressFromCoreData
+            let nc = UINavigationController.init(rootViewController: addressSelectionController)
+            presentViewController(nc, animated: true, completion: nil)
+        }
+        else{
+            let addressCreationController = UIStoryboard.cartStoryboard().instantiateViewControllerWithIdentifier(String(AddressController)) as! AddressController
+            
+            let nc = UINavigationController.init(rootViewController: addressCreationController)
+            presentViewController(nc, animated: true, completion: nil)
+        }
     }
 }

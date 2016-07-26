@@ -8,14 +8,21 @@
 
 import UIKit
 
-class AddressCell: UITableViewCell {
+protocol AddressCellDelegate {
+    func addNewAddressButtonPressed()
+}
 
-    @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var phoneNumberLabel: UILabel!
+class AddressCell: UITableViewCell {
+    @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var selectAddressLabel: UILabel!
+    @IBOutlet weak var zipCodeLabel: UILabel!
+    
+    var delegate : AddressCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectAddressLabel.text = "Select address"
         // Initialization code
     }
 
@@ -25,12 +32,16 @@ class AddressCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func updateAddress(){
-        
+    func updateAddress(address:Address?){
+        if let unwrappedAddress = address{
+            addressLabel.text = (unwrappedAddress.firstName ?? "") + kSpaceString + (unwrappedAddress.lastName ?? "" ) + kSpaceString + (unwrappedAddress.address1 ?? "")
+            cityLabel.text = unwrappedAddress.city
+            zipCodeLabel.text = unwrappedAddress.zip
+        }
     }
     
     @IBAction func addNewAddressButtonPressed(sender: AnyObject) {
-        
+        delegate?.addNewAddressButtonPressed()
     }
     
     

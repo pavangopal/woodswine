@@ -297,25 +297,29 @@ class Helper {
     
    //core data
     
-    class func AddressForDictionary(dict: NSDictionary) -> Address? {
+    class func AddressForDictionary(addressStruct: AddressCreationCell.addressStruct) -> Address? {
         
-        guard let id = dict["_id"] else {
+        guard let id = addressStruct.id else {
             return nil
         }
-        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+
         let predicate = NSPredicate(format: "id = %@", argumentArray: [id])
         let newObject = coreDataObjectForPredicate(predicate, entityName: String(Address)) as! Address
         
-        
-        newObject.id = id as? String
-        newObject.address1 = dict["address1"] as? String
-        newObject.city = dict["address1"] as? String
-        newObject.countryCode = dict["countryCode"] as? String
-        newObject.firstName = dict["firstName"] as? String
-        newObject.lastName = dict["lastName"] as? String
-        newObject.zip = dict["zip"] as? String
-        newObject.province = dict["province"] as? String
-        
+        newObject.id = addressStruct.id
+        newObject.address1 = addressStruct.address
+        newObject.city = addressStruct.city
+        newObject.countryCode = addressStruct.countryCode
+        newObject.firstName = addressStruct.firstName
+        newObject.lastName = addressStruct.lastName
+        newObject.zip = addressStruct.zipCode
+        newObject.province = addressStruct.province
+        do {
+            try appDelegate.managedObjectContext.save()
+        } catch let error {
+            print("Coredata error: \(error)")
+        }
         return newObject
     }
     
@@ -342,6 +346,7 @@ class Helper {
             }else{
                 return NSEntityDescription.insertNewObjectForEntityForName(entityName, inManagedObjectContext: appDelegate.managedObjectContext)
             }
+          
         }
 
     class func fetchAllAddress() -> [Address]{
