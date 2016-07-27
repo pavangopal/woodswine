@@ -17,6 +17,7 @@ class AddressCell: UITableViewCell {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var selectAddressLabel: UILabel!
     @IBOutlet weak var zipCodeLabel: UILabel!
+    @IBOutlet weak var NameLabel: UILabel!
     
     var delegate : AddressCellDelegate?
     
@@ -34,7 +35,8 @@ class AddressCell: UITableViewCell {
 
     func updateAddress(address:Address?){
         if let unwrappedAddress = address{
-            addressLabel.text = (unwrappedAddress.firstName ?? "") + kSpaceString + (unwrappedAddress.lastName ?? "" ) + kSpaceString + (unwrappedAddress.address1 ?? "")
+            NameLabel.text = (unwrappedAddress.firstName ?? "") + kSpaceString +  kSpaceString + (unwrappedAddress.lastName ?? "" )
+            addressLabel.text = (unwrappedAddress.address1 ?? "")
             cityLabel.text = unwrappedAddress.city
             zipCodeLabel.text = unwrappedAddress.zip
         }

@@ -9,6 +9,10 @@
 import UIKit
 import Buy
 
+protocol DashboardCellDelegate {
+    func updateBadgeCount()
+}
+
 class DashboardCell: UICollectionViewCell {
 
     @IBOutlet weak var priceLabel: UILabel!
@@ -20,6 +24,7 @@ class DashboardCell: UICollectionViewCell {
     
     
     var productVariant : BUYProductVariant?
+    var delegate : DashboardCellDelegate?
 
     override func awakeFromNib() {
         
@@ -55,12 +60,13 @@ class DashboardCell: UICollectionViewCell {
     
     @IBAction func addToCartButtonPressed(sender: UIButton) {
         CartManager.instance.addProductVarientToCart(productVariant)
-        
+        delegate?.updateBadgeCount()
     }
     
 
     @IBAction func deleteFromCartButtonPressed(sender: UIButton) {
         CartManager.instance.deleteProductVarientFromCart(productVariant)
+        delegate?.updateBadgeCount()
 
     }
     

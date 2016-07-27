@@ -8,11 +8,17 @@
 
 import UIKit
 import Buy
+import Cosmos
+
+protocol DetailHeaderViewDelegate {
+    func updateBadgeCount()
+}
 
 
 class DetailHeaderView: UICollectionReusableView {
     @IBOutlet weak var backGorundImageView: UIImageView!
     
+    @IBOutlet weak var cosmosView: CosmosView!
     @IBOutlet weak var wineImageView: UIImageView!
     
     @IBOutlet weak var wineTitleLabel: UILabel!
@@ -25,9 +31,10 @@ class DetailHeaderView: UICollectionReusableView {
     @IBOutlet weak var addToCart: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var productInfoTextView: UITextView!
-    var productVariant : BUYProductVariant?
     @IBOutlet weak var wishListButton: UIButton!
     
+    var productVariant : BUYProductVariant?
+    var delegate : DetailHeaderViewDelegate?
     
     func updateData(product:BUYProduct?){
         
@@ -107,12 +114,14 @@ class DetailHeaderView: UICollectionReusableView {
     
     @IBAction func deleteFromCartButtonPressed(sender: AnyObject) {
         CartManager.instance.deleteProductVarientFromCart(productVariant)
-        
+        delegate?.updateBadgeCount()
+
     }
     
     @IBAction func addToCartButtonPressed(sender: AnyObject) {
         CartManager.instance.addProductVarientToCart(productVariant)
-        
+        delegate?.updateBadgeCount()
+
     }
     
     @IBAction func shareWineButtonPressed(sender: AnyObject) {

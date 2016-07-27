@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("detail")
+        CartManager.instance.delegate = self
 //       print(CartManager.instance.lineItems[0].quantity)
         
         // Do any additional setup after loading the view.
@@ -31,7 +32,7 @@ class DetailViewController: UIViewController {
 
 }
 
-extension DetailViewController:UICollectionViewDelegate,UICollectionViewDataSource{
+extension DetailViewController:UICollectionViewDelegate,UICollectionViewDataSource,CartManagerDelegate{
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 1
@@ -39,7 +40,7 @@ extension DetailViewController:UICollectionViewDelegate,UICollectionViewDataSour
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let detailCell = collectionView.dequeueReusableCellWithReuseIdentifier("DetailCell", forIndexPath: indexPath) as! DetailCell
-        
+
         return detailCell
     }
     
@@ -55,7 +56,8 @@ extension DetailViewController:UICollectionViewDelegate,UICollectionViewDataSour
                     as! DetailHeaderView
             
             headerView.updateData(product)
-            
+//            headerView.delegate = self
+
             return headerView
         default:
             //4
@@ -63,7 +65,11 @@ extension DetailViewController:UICollectionViewDelegate,UICollectionViewDataSour
         }
     }
     
-    
-
-    
+   
+    func cartBadgeCountUpdatingDelegateFunction(count:Int){
+        let tabArray = self.tabBarController?.tabBar.items as NSArray!
+        let tabItem = tabArray.objectAtIndex(1) as! UITabBarItem
+        
+        tabItem.badgeValue = String(count)
+    }
 }

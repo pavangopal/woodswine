@@ -10,7 +10,6 @@ import UIKit
 import AVFoundation
 import Buy
 
-
 class DashBoardViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -30,6 +29,7 @@ class DashBoardViewController: UIViewController {
         getDataFromShopifyStore()
         collectionView.registerNib(UINib(nibName:"DashboardHeaderView",bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "DashboardHeaderView")
         updateLeftNavBarItems()
+        CartManager.instance.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -121,7 +121,7 @@ class DashBoardViewController: UIViewController {
 }
 
 
-extension DashBoardViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+extension DashBoardViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,DashboardCellDelegate,CartManagerDelegate{
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Myproducts.count
@@ -131,6 +131,7 @@ extension DashBoardViewController:UICollectionViewDelegate,UICollectionViewDataS
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DashboardCell", forIndexPath: indexPath) as! DashboardCell
+        cell.delegate = self
         cell.updateCellData(Myproducts[indexPath.row] as? BUYProduct)
         return cell
     }
@@ -172,6 +173,18 @@ extension DashBoardViewController:UICollectionViewDelegate,UICollectionViewDataS
         self.navigationController?.pushViewController(detailViewController, animated: true)
         
     }
+    
+    func updateBadgeCount(){
+        
+    }
+    
+    func cartBadgeCountUpdatingDelegateFunction(count:Int){
+        let tabArray = self.tabBarController?.tabBar.items as NSArray!
+        let tabItem = tabArray.objectAtIndex(1) as! UITabBarItem
+        
+        tabItem.badgeValue = String(count)
+    }
+
 }
 
 extension DashBoardViewController : UISearchBarDelegate,UISearchControllerDelegate,UISearchResultsUpdating{

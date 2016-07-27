@@ -86,6 +86,11 @@ class AddressCreationCell: UITableViewCell,UITextFieldDelegate {
 
     }
     
+    @IBAction func getEmail(sender: AnyObject) {
+        let textField = sender as! UITextField
+        addressStructObject.email = textField.text
+        delegate?.updateAddress(addressStructObject)
+    }
 }
 
 extension  AddressCreationCell{
@@ -99,5 +104,6 @@ struct addressStruct{
     var city : String?
     var zipCode : String?
     var countryCode : String?
+    var email : String?
 }
 }

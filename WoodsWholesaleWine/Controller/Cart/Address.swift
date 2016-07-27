@@ -20,5 +20,6 @@ class Address: NSManagedObject {
     @NSManaged var province: String?
     @NSManaged var city: String?
     @NSManaged var countryCode: String?
+    @NSManaged var email: String?
 
 }

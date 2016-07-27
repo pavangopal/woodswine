@@ -11,6 +11,10 @@ import UIKit
 import Buy
 import BRYXBanner
 
+protocol CartManagerDelegate {
+    func cartBadgeCountUpdatingDelegateFunction(count:Int)
+}
+
 class CartManager: BUYCart {
 
     
@@ -21,7 +25,11 @@ class CartManager: BUYCart {
     var totalShippingCharge = Float()
     var billTotal = Float()
     var grandTotal = Float()
-    var ShippingAddress = BUYAddress()
+    var ShippingAddress : Address?
+    var BillingAddress : Address?
+    var emailAddress : String?
+    var delegate : CartManagerDelegate?
+
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
 //        // Do any additional setup after loading the view.
@@ -42,9 +50,14 @@ class CartManager: BUYCart {
         if let unwrappedProductVarient = productVarient{
             if unwrappedProductVarient.available{
                 CartManager.instance.addVariant(unwrappedProductVarient)
+                
+               delegate?.cartBadgeCountUpdatingDelegateFunction(CartManager.instance.lineItems.count)
+//                let banner = Banner(title: "Product Added", subtitle: "", image: UIImage(named: "Icon"), backgroundColor: ConstantColor.CWGreen)
+//                banner.dismissesOnTap = true
+//                banner.show(duration: 3.0)
             }
             else{
-                let banner = Banner(title: "Product Not Available", subtitle: "", image: UIImage(named: "Icon"), backgroundColor: UIColor(red:48.00/255.0, green:174.0/255.0, blue:51.5/255.0, alpha:1.000))
+                let banner = Banner(title: "Product Not Available", subtitle: "", image: UIImage(named: "Icon"), backgroundColor: ConstantColor.CWOrange)
                 banner.dismissesOnTap = true
                 banner.show(duration: 3.0)
             }
@@ -59,6 +72,9 @@ class CartManager: BUYCart {
         if let unwrappedProductVarient = productVarient{
             if unwrappedProductVarient.available{
                 CartManager.instance.removeVariant(unwrappedProductVarient)
+                
+                delegate?.cartBadgeCountUpdatingDelegateFunction(CartManager.instance.lineItems.count)
+
             }
             else{
                 print("product variant not available")

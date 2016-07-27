@@ -11,9 +11,7 @@ import UIKit
 class TabBarContainer: UIViewController {
 
     var myTabBarController: UITabBarController!
-    
-    
-
+    var badgeLabel : UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +50,8 @@ class TabBarContainer: UIViewController {
             else if (tabName == "\(TabName.Cart)") {
             // launch card controller
                 let tabItem = UITabBarItem.init(title: tabName, image: AssetImage.cart.image, tag: index)
+                
+                tabItem.badgeValue = String(CartManager.instance.lineItems.count)
                 
                 let cartController = UIStoryboard.cartStoryboard().instantiateViewControllerWithIdentifier(String(CartController)) as! CartController
                 cartController.tabBarItem = tabItem

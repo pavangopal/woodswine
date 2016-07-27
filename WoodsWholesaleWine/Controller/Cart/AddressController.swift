@@ -31,12 +31,18 @@ class AddressController: UIViewController {
     func updateLeftNavBarItems() {
 
         let saveItem = UIBarButtonItem(title: "Save", style: .Done, target: self, action: #selector(AddressController.saveNewAddressButtonPressed))
+         let closeItem = UIBarButtonItem(barButtonSystemItem: .Stop, target: self, action: #selector(AddressController.closeItemButtonPressed))
         
+        navigationItem.leftBarButtonItems = [closeItem]
         navigationItem.rightBarButtonItems = [saveItem]
     }
     
+    func closeItemButtonPressed(){
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     func saveNewAddressButtonPressed(){
-        if Helper.lengthOfStringWithoutSpace(addressToAddObject.address) > 0 && Helper.lengthOfStringWithoutSpace(addressToAddObject.city) > 0 && Helper.lengthOfStringWithoutSpace(addressToAddObject.countryCode) > 0 && Helper.lengthOfStringWithoutSpace(addressToAddObject.firstName) > 0 && Helper.lengthOfStringWithoutSpace(addressToAddObject.lastName) > 0 && Helper.lengthOfStringWithoutSpace(addressToAddObject.province) > 0 && Helper.lengthOfStringWithoutSpace(addressToAddObject.zipCode) > 0{
+        if Helper.lengthOfStringWithoutSpace(addressToAddObject.address) > 0 && Helper.lengthOfStringWithoutSpace(addressToAddObject.city) > 0 && Helper.lengthOfStringWithoutSpace(addressToAddObject.countryCode) > 0 && Helper.lengthOfStringWithoutSpace(addressToAddObject.firstName) > 0 && Helper.lengthOfStringWithoutSpace(addressToAddObject.lastName) > 0 && Helper.lengthOfStringWithoutSpace(addressToAddObject.province) > 0 && Helper.lengthOfStringWithoutSpace(addressToAddObject.zipCode) > 0 && Helper.lengthOfStringWithoutSpace(addressToAddObject.email) > 0{
             
             let addresess = Helper.fetchAllAddress()
             addressToAddObject.id = String(addresess.count)
@@ -47,6 +53,9 @@ class AddressController: UIViewController {
                 let banner = Banner(title: "Address added successfully", subtitle: "", image: UIImage(named: "Icon"), backgroundColor: ConstantColor.CWGreen)
                 banner.dismissesOnTap = true
                 banner.show(duration: 3.0)
+                CartManager.instance.ShippingAddress = addressCoreDataObject
+                CartManager.instance.BillingAddress = addressCoreDataObject
+                CartManager.instance.emailAddress = addressCoreDataObject?.email ?? ""
                 dismissViewControllerAnimated(true, completion: nil)
             }
             else{

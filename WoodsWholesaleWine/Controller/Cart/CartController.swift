@@ -13,6 +13,11 @@ class CartController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var proceedToCheckoutButton: UIButton!
+    @IBOutlet weak var buyWithApplePayButton: UIButton!
+    @IBOutlet weak var buttonView: UIView!
     var addressFromCoreData : [Address]?
         
     override func viewDidLoad() {
@@ -21,9 +26,14 @@ class CartController: UIViewController {
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
         updateLeftNavBarItems()
-        addressFromCoreData = Helper.fetchAllAddress()
-        let address = Helper.fetchAddress(forId: "0")
-        
+        proceedToCheckoutButton.setImage(AssetImage.credit.image, forState: .Normal)
+        proceedToCheckoutButton.imageEdgeInsets = UIEdgeInsetsMake(5, 0, 0, 5)
+        proceedToCheckoutButton.setTitle("Checkout", forState: .Normal)
+        buyWithApplePayButton.setImage(AssetImage.apple.image, forState: .Normal)
+        buyWithApplePayButton.imageEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 10)
+        tableView.tableFooterView = UIView(frame: CGRectZero)
+        CartManager.instance.ShippingAddress = Helper.fetchAllAddress().first
+        buyWithApplePayButton.setTitle("Pay", forState: .Normal)
         // Do any additional setup after loading the view.
     }
 
@@ -46,6 +56,11 @@ class CartController: UIViewController {
     
     func clearCartButtonPressed(){
         CartManager.instance.clearCart()
+        
+            let tabArray = self.tabBarController?.tabBar.items as NSArray!
+            let tabItem = tabArray.objectAtIndex(1) as! UITabBarItem
+            
+            tabItem.badgeValue = String(CartManager.instance.lineItems.count)
         
         tableView.reloadData()
     }
@@ -89,7 +104,7 @@ extension CartController : UITableViewDelegate,UITableViewDataSource,CartCellDel
         case 3 :
             let addressCell = tableView.dequeueReusableCellWithIdentifier("AddressCell", forIndexPath: indexPath) as! AddressCell
             addressCell.delegate = self
-            addressCell.updateAddress(addressFromCoreData?.first)
+            addressCell.updateAddress(CartManager.instance.ShippingAddress)
             return addressCell
         default:
             return UITableViewCell()
@@ -105,9 +120,10 @@ extension CartController : UITableViewDelegate,UITableViewDataSource,CartCellDel
     }
     
     func addNewAddressButtonPressed(){
+        addressFromCoreData = Helper.fetchAllAddress()
         if addressFromCoreData?.count > 0{
             let addressSelectionController = UIStoryboard.cartStoryboard().instantiateViewControllerWithIdentifier(String(AddressSelectionController)) as! AddressSelectionController
-            addressSelectionController.addressObjects = addressFromCoreData
+//            addressSelectionController.delegate = self
             let nc = UINavigationController.init(rootViewController: addressSelectionController)
             presentViewController(nc, animated: true, completion: nil)
         }
@@ -118,4 +134,12 @@ extension CartController : UITableViewDelegate,UITableViewDataSource,CartCellDel
             presentViewController(nc, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func proceedToCheckoutButtonPressed(sender: AnyObject) {
+    }
+    
+    @IBAction func buyWithApplepayButtonPressed(sender: AnyObject) {
+    }
+    
+    
 }

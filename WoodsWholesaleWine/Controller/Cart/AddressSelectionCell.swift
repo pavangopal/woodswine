@@ -18,6 +18,7 @@ class AddressSelectionCell: UITableViewCell {
     @IBOutlet weak var zipCodeLabel: UILabel!
     @IBOutlet weak var countryCodeLabel: UILabel!
     
+    @IBOutlet weak var emailLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,6 +40,7 @@ class AddressSelectionCell: UITableViewCell {
         provinceLabel.text = unwrappedAddress.province
         zipCodeLabel.text = unwrappedAddress.zip
         countryCodeLabel.text = unwrappedAddress.countryCode
+        emailLabel.text = unwrappedAddress.email
         }
         else{
             print("Unwrapping of adress failed in AddressSelectionCell file")

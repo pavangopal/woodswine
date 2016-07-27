@@ -353,7 +353,7 @@ class Helper {
         let fetchRequest = NSFetchRequest(entityName: String(Address))
         var AddressArray = [Address]()
         
-        let sortDescriptor = NSSortDescriptor(key: "id", ascending: false)
+        let sortDescriptor = NSSortDescriptor(key: "id", ascending: true)
         let sortDescriptors = [sortDescriptor]
         fetchRequest.sortDescriptors = sortDescriptors
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -404,6 +404,39 @@ class Helper {
         }
         
         return unwrappedAddressData
+        
+    }
+    
+    class func deleteAddress(forId forId : String) -> Bool{
+        
+        let fetchRequest = NSFetchRequest(entityName: String(Address))
+        
+        let predicateForId = NSPredicate(format: "id = %@", argumentArray: [forId])
+        
+        fetchRequest.predicate = predicateForId
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        var result: NSArray?
+        do {
+            result = try appDelegate.managedObjectContext.executeFetchRequest(fetchRequest)
+        } catch let error as NSError {
+            print("Fetch failed: \(error.localizedDescription)")
+        }
+        
+        // Return that eobject if already exists or create a new one
+        if result?.count > 0 {
+            let object: NSManagedObject = result?.firstObject as! NSManagedObject
+            appDelegate.managedObjectContext.deleteObject(object)
+            do {
+                try appDelegate.managedObjectContext.save()
+            } catch let error {
+                print("Coredata error: \(error)")
+            }
+            return true
+        }
+        else{
+            return  false
+        }
         
     }
 }
