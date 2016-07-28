@@ -29,7 +29,12 @@ class DashBoardViewController: UIViewController {
         getDataFromShopifyStore()
         collectionView.registerNib(UINib(nibName:"DashboardHeaderView",bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "DashboardHeaderView")
         updateLeftNavBarItems()
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         CartManager.instance.delegate = self
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -180,9 +185,10 @@ extension DashBoardViewController:UICollectionViewDelegate,UICollectionViewDataS
     
     func cartBadgeCountUpdatingDelegateFunction(count:Int){
         let tabArray = self.tabBarController?.tabBar.items as NSArray!
-        let tabItem = tabArray.objectAtIndex(1) as! UITabBarItem
-        
-        tabItem.badgeValue = String(count)
+        if tabArray != nil{
+            let tabItem = tabArray.objectAtIndex(1) as! UITabBarItem
+            tabItem.badgeValue = String(count)
+        }
     }
 
 }

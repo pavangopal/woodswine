@@ -42,6 +42,10 @@ struct ConstantUI {
     static let userProfileWidth : CGFloat = 50
 }
 
+struct ConstantServer {
+    static var apiURL = "http://api.linkedin.com/"
+    
+}
 
 struct ConstantDate {
     static let tzDateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'"
@@ -126,6 +130,7 @@ public enum AssetImage : String {
     case mail = "mail"
     case minusGrey = "minusx"
     case right = "right"
+    case linkedIn = "linkedInSignIn"
     
    }
 

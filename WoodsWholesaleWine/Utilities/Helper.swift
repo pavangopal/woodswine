@@ -315,6 +315,7 @@ class Helper {
         newObject.lastName = addressStruct.lastName
         newObject.zip = addressStruct.zipCode
         newObject.province = addressStruct.province
+        newObject.phoneNumber = addressStruct.phoneNumber
         do {
             try appDelegate.managedObjectContext.save()
         } catch let error {
@@ -323,6 +324,34 @@ class Helper {
         return newObject
     }
     
+    class func UserForDictionary(userStruct : LoginController.UserStruct?) -> User? {
+        if let unwrappeduserStruct = userStruct{
+        guard let id = unwrappeduserStruct.id else {
+            return nil
+        }
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let predicate = NSPredicate(format: "id = %@", argumentArray: [id])
+            let newObject = coreDataObjectForPredicate(predicate, entityName: String(User)) as! User
+            
+            newObject.id = unwrappeduserStruct.id
+        newObject.emailAddress = unwrappeduserStruct.emailAddress
+        newObject.firstName = unwrappeduserStruct.firstname
+        newObject.lastName = unwrappeduserStruct.lastname
+        newObject.phoneNumber = unwrappeduserStruct.phoneNumber
+        newObject.image = unwrappeduserStruct.image
+
+        
+        do {
+            try appDelegate.managedObjectContext.save()
+        } catch let error {
+            print("Coredata error: \(error)")
+        }
+        return newObject
+        }else{
+            return nil
+        }
+    }
         class func coreDataObjectForPredicate(predicate: NSPredicate, entityName: String) -> AnyObject {
             
             let fetchRequest = NSFetchRequest(entityName:entityName)
@@ -399,6 +428,35 @@ class Helper {
             return nil
         }
         guard let unwrappedAddressData = unwrappedResult.firstObject as? Address else{
+            print("unwrappedAddress is empty")
+            return nil
+        }
+        
+        return unwrappedAddressData
+        
+    }
+    
+    class func fetchUser(forId forId : String) -> User?{
+        
+        let fetchRequest = NSFetchRequest(entityName: String(User))
+        
+        let predicateForId = NSPredicate(format: "id = %@", argumentArray: [forId])
+        
+        fetchRequest.predicate = predicateForId
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        var result: NSArray?
+        do {
+            result = try appDelegate.managedObjectContext.executeFetchRequest(fetchRequest)
+        } catch let error as NSError {
+            print("Fetch failed: \(error.localizedDescription)")
+        }
+        
+        guard let unwrappedResult = result where unwrappedResult.count > 0  else{
+            print("AddressArray is empty")
+            return nil
+        }
+        guard let unwrappedAddressData = unwrappedResult.firstObject as? User else{
             print("unwrappedAddress is empty")
             return nil
         }

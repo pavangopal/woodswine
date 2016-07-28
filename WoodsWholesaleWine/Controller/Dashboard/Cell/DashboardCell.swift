@@ -60,13 +60,13 @@ class DashboardCell: UICollectionViewCell {
     
     @IBAction func addToCartButtonPressed(sender: UIButton) {
         CartManager.instance.addProductVarientToCart(productVariant)
-        delegate?.updateBadgeCount()
+//        delegate?.updateBadgeCount()
     }
     
 
     @IBAction func deleteFromCartButtonPressed(sender: UIButton) {
         CartManager.instance.deleteProductVarientFromCart(productVariant)
-        delegate?.updateBadgeCount()
+//        delegate?.updateBadgeCount()
 
     }
     

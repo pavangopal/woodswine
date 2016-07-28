@@ -5,6 +5,9 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbauth2</string>
+        <string>linkedin</string>
+        <string>linkedin-sdk2</string>
+        <string>linkedin-sdk</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
@@ -44,6 +47,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb761920323949552</string>
+				<string>li81jsk9hn6f7fhy</string>
 			</array>
 		</dict>
 	</array>
@@ -51,5 +55,23 @@
 	<string>761920323949552</string>
 	<key>FacebookDisplayName</key>
 	<string>Wood­s­W­h­o­l­e­s­a­l­e­Wine</string>
+	<key>LIAppId</key>
+	<string>81jsk9hn6f7fhy</string>
+    
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>linkedin.com</key>
+            <dict>
+                <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                <true/>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+                <key>NSExceptionRequiresForwardSecrecy</key>
+                <false/>
+            </dict>
+        </dict>
+    </dict>
 </dict>
 </plist>

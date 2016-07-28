@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -24,7 +29,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>IOSLinkedInAPIFix.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>LinkedinSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -62,22 +77,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0189DFE1FAA1F3801E890BEA5E9D6C8C</key>
+		<key>1AA2D9027BE74A82F572ABE6F7B55DA6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2BBA22A694EBA1896C7BD672884B1C82</key>
+		<key>1C3436CEA5C3D39764C5F54374794ECB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>40F936EA30AA6612BB890B378C0A65DC</key>
+		<key>1CC3D8E68A6BC4C534ED69FA33B36BFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4CEBCC2D58B51F9F05C50917236EB00C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>608B49B5DDACC601EE8044A1931993F9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>66E30C5079E892CC887C809D459B5FFE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,12 +117,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>79D66E5D5DBA732F0A4B0459BFA9321A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BE24AC6997BF10B91FF5ADA0E0C8F3BE</key>
+		<key>90DCE0A0E733CE5314D3E0360C0E09D3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -113,6 +133,16 @@
 			<true/>
 		</dict>
 		<key>F047765615DAFEB156EDB0324BB55207</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F7F3A6C95410249477C19F8A24C5C204</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FD63B3EE97C970C6E45F5F1FE028ACBA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

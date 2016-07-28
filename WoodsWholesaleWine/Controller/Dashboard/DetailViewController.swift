@@ -18,12 +18,14 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("detail")
-        CartManager.instance.delegate = self
 //       print(CartManager.instance.lineItems[0].quantity)
         
         // Do any additional setup after loading the view.
     }
-
+    override func viewWillAppear(animated: Bool) {
+        CartManager.instance.delegate = self
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -68,8 +70,9 @@ extension DetailViewController:UICollectionViewDelegate,UICollectionViewDataSour
    
     func cartBadgeCountUpdatingDelegateFunction(count:Int){
         let tabArray = self.tabBarController?.tabBar.items as NSArray!
+        if tabArray != nil{
         let tabItem = tabArray.objectAtIndex(1) as! UITabBarItem
-        
         tabItem.badgeValue = String(count)
+        }
     }
 }

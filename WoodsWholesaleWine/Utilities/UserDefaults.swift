@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 
-private let ksetLinkedInAccessTokenAccessToken = "kLinkedInAccessToken"
+private let ksetLinkedInAccessTokenAccessToken = "LIAccessToken"
 private let kFacebookAccessToken = "kFacebookAccessToken"
 private let kDeviceId = "kDeviceId"
 private let kDeviceToken = "kDeviceToken"

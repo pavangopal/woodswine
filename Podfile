@@ -6,6 +6,8 @@ pod 'SKPhotoBrowser'
 pod 'BRYXBanner'
 pod "Mobile-Buy-SDK"
 pod 'Cosmos', '~> 1.2'
+pod 'LinkedinSwift', '~> 1.6.2'
+
 use_frameworks!
 
 target 'WoodsWholesaleWine' do

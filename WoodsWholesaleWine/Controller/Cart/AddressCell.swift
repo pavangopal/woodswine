@@ -35,10 +35,10 @@ class AddressCell: UITableViewCell {
 
     func updateAddress(address:Address?){
         if let unwrappedAddress = address{
-            NameLabel.text = (unwrappedAddress.firstName ?? "") + kSpaceString +  kSpaceString + (unwrappedAddress.lastName ?? "" )
-            addressLabel.text = (unwrappedAddress.address1 ?? "")
-            cityLabel.text = unwrappedAddress.city
-            zipCodeLabel.text = unwrappedAddress.zip
+            NameLabel.text = (unwrappedAddress.firstName  ?? "") + " " + kSpaceString +  kSpaceString + (unwrappedAddress.lastName ?? "" )
+            addressLabel.text = (unwrappedAddress.address1 ?? "") + kSpaceString + (unwrappedAddress.city ?? "") + kSpaceString + (unwrappedAddress.zip ?? "")
+            cityLabel.text = unwrappedAddress.phoneNumber
+            zipCodeLabel.text = unwrappedAddress.email // email label
         }
     }
     

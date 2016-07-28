@@ -21,5 +21,6 @@ class Address: NSManagedObject {
     @NSManaged var city: String?
     @NSManaged var countryCode: String?
     @NSManaged var email: String?
+    @NSManaged var phoneNumber: String?
 
 }

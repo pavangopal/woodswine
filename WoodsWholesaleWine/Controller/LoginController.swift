@@ -10,6 +10,7 @@ import UIKit
 import FBSDKLoginKit
 
 
+
 class LoginController: UIViewController {
     
     // MARK: IBOutlet Properties
@@ -19,6 +20,7 @@ class LoginController: UIViewController {
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
     var loginCompletionHandler:(() -> Void)!
+    var userStruct : LoginController.UserStruct?
 
     
     override func viewDidLoad() {
@@ -63,6 +65,7 @@ class LoginController: UIViewController {
         
         webViewController.webViewCompletionHandler = {() -> Void in
             if self.loginCompletionHandler != nil {
+                self.getProfileInfo()
                 self.dismissViewControllerAnimated(true, completion: nil)
                 self.loginCompletionHandler()
             }
@@ -71,11 +74,12 @@ class LoginController: UIViewController {
     }
     
     
-    @IBAction func getProfileInfo(sender: AnyObject) {
-        if let accessToken = NSUserDefaults.standardUserDefaults().objectForKey("LIAccessToken") {
+     func getProfileInfo() {
+        if let accessToken = UserDefaults.linkedInAccessToken() {
             // Specify the URL string that we'll get the profile info from.
-            let targetURLString = "https://api.linkedin.com/v1/people/~:(public-profile-url)?format=json"
+            let targetURLString = "https://api.linkedin.com/v1/people/~:(id,first-name,last-name,email-address,picture-url,phone-numbers)?format=json"
             
+
             
             
             // Initialize a mutable URL request object.
@@ -102,7 +106,15 @@ class LoginController: UIViewController {
                         let dataDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
 
                         
-                        let profileURLString = dataDictionary["publicProfileUrl"] as! String
+                        self.userStruct?.firstname = dataDictionary["firstName"] as? String
+                        self.userStruct?.id = dataDictionary["id"] as? String
+                        self.userStruct?.lastname = dataDictionary["lastName"] as? String
+                        self.userStruct?.image = dataDictionary["pictureUrl"] as? String
+                        self.userStruct?.emailAddress = dataDictionary["emailAddress"] as? String
+                        self.userStruct?.phoneNumber = dataDictionary["phoneNumber"] as? String
+                        
+                        Helper.UserForDictionary(self.userStruct)
+                        
                         
                         
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -133,6 +145,7 @@ class LoginController: UIViewController {
     func checkForExistingAccessToken() {
         if NSUserDefaults.standardUserDefaults().objectForKey("LIAccessToken") != nil {
             btnSignIn.enabled = false
+            getProfileInfo()
 //            btnGetProfileInfo.enabled = true
         }
     }
@@ -147,9 +160,16 @@ extension LoginController : FBSDKLoginButtonDelegate{
       let requestObject =   FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields":"first_name, last_name, picture.type(large)"])
         
        requestObject.startWithCompletionHandler { (connection, result, error) -> Void in
-            let strFirstName: String = (result.objectForKey("first_name") as? String)!
-            let strLastName: String = (result.objectForKey("last_name") as? String)!
-            let strPictureURL: String = (result.objectForKey("picture")?.objectForKey("data")?.objectForKey("url") as? String)!
+        //change ! and unwrap
+        self.userStruct?.firstname = (result.objectForKey("first_name") as? String) ?? ""
+//        self.userStruct?.id = dataDictionary["id"] as? String
+        self.userStruct?.lastname = (result.objectForKey("last_name") as? String) ?? ""
+        self.userStruct?.image = (result.objectForKey("picture")?.objectForKey("data")?.objectForKey("url") as? String) ?? ""
+//        self.userStruct?.emailAddress = dataDictionary["emailAddress"] as? String
+//        self.userStruct?.phoneNumber = dataDictionary["phoneNumber"] as? String
+        
+            Helper.UserForDictionary(self.userStruct)
+        
             let token = requestObject.tokenString
             UserDefaults.setFacebookAccessToken(token)
         
@@ -158,8 +178,6 @@ extension LoginController : FBSDKLoginButtonDelegate{
                 self.loginCompletionHandler()
             }
             
-//            self.lblName.text = "Welcome, \(strFirstName) \(strLastName)"
-//            self.ivUserProfileImage.image = UIImage(data: NSData(contentsOfURL: NSURL(string: strPictureURL)!)!)
         }
        
     }
@@ -170,5 +188,15 @@ extension LoginController : FBSDKLoginButtonDelegate{
         loginManager.logOut()
 //        ivUserProfileImage.image = nil
 //        lblName.text = ""
+    }
+}
+extension LoginController {
+    struct UserStruct {
+        var image :String?
+        var firstname : String?
+        var lastname : String?
+        var id : String?
+        var emailAddress : String?
+        var phoneNumber : String?
     }
 }

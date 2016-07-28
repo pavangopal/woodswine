@@ -22,16 +22,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WoodsWholesaleWine/Utilities/Helper.swift"
-            timestampString = "491254343.698639"
+            filePath = "WoodsWholesaleWine/Controller/WebViewController.swift"
+            timestampString = "491433692.784476"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "323"
-            endingLineNumber = "323"
-            landmarkName = "AddressForDictionary(_:)"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "requestForAccessToken(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WoodsWholesaleWine/Controller/Dashboard/DashBoardViewController.swift"
-            timestampString = "491349344.407911"
+            filePath = "WoodsWholesaleWine/Controller/CartManager.swift"
+            timestampString = "491430766.272834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
-            landmarkName = "cartBadgeCountUpdatingDelegateFunction(_:)"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "deleteProductVarientFromCart(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WoodsWholesaleWine/Controller/LoginController.swift"
+            timestampString = "491432203.485971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "getProfileInfo()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

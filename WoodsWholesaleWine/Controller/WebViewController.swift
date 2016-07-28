@@ -72,7 +72,9 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         authorizationURL += "client_id=\(linkedInKey)&"
         authorizationURL += "redirect_uri=\(redirectURL)&"
         authorizationURL += "state=\(state)&"
-        authorizationURL += "scope=\(scope)"
+        authorizationURL += "scope=\(scope)&"
+        authorizationURL += "r_emailaddress"
+
         
         print(authorizationURL)
         
@@ -126,7 +128,9 @@ class WebViewController: UIViewController, UIWebViewDelegate {
                     let dataDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
                     
                     let accessToken = dataDictionary["access_token"] as! String
+                    
                     UserDefaults.setLinkedInAccessToken(accessToken)
+                    
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         if self.webViewCompletionHandler != nil {
                             self.dismissViewControllerAnimated(true, completion: nil)

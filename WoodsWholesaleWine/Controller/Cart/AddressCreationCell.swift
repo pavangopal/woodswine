@@ -22,6 +22,7 @@ class AddressCreationCell: UITableViewCell,UITextFieldDelegate {
     @IBOutlet weak var zipTextField: UITextField!
     @IBOutlet weak var countryCodeTextField: UITextField!
     
+    @IBOutlet weak var phoneNumbertextField: UITextField!
     
  
     
@@ -91,6 +92,13 @@ class AddressCreationCell: UITableViewCell,UITextFieldDelegate {
         addressStructObject.email = textField.text
         delegate?.updateAddress(addressStructObject)
     }
+    
+    @IBAction func getPhoneNumber(sender: AnyObject) {
+        let textField = sender as! UITextField
+        addressStructObject.phoneNumber = textField.text
+        delegate?.updateAddress(addressStructObject)
+    }
+    
 }
 
 extension  AddressCreationCell{
@@ -105,5 +113,6 @@ struct addressStruct{
     var zipCode : String?
     var countryCode : String?
     var email : String?
+    var phoneNumber : String?
 }
 }
