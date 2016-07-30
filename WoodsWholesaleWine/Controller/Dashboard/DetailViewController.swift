@@ -13,7 +13,8 @@ import Buy
 class DetailViewController: UIViewController {
     
     
-    var product : BUYProduct?
+    @IBOutlet weak var collectionView: UICollectionView!
+    var product : Product?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +58,7 @@ extension DetailViewController:UICollectionViewDelegate,UICollectionViewDataSour
                                                                       forIndexPath: indexPath)
                     as! DetailHeaderView
             
-            headerView.updateData(product)
+            headerView.updateData(product,index: indexPath)
 //            headerView.delegate = self
 
             return headerView
@@ -68,11 +69,12 @@ extension DetailViewController:UICollectionViewDelegate,UICollectionViewDataSour
     }
     
    
-    func cartBadgeCountUpdatingDelegateFunction(count:Int){
+    func cartBadgeCountUpdatingDelegateFunction(count:Int,indexPath:NSIndexPath){
         let tabArray = self.tabBarController?.tabBar.items as NSArray!
         if tabArray != nil{
         let tabItem = tabArray.objectAtIndex(1) as! UITabBarItem
         tabItem.badgeValue = String(count)
         }
+        collectionView.reloadData()
     }
 }

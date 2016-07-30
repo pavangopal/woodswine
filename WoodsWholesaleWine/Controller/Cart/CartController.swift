@@ -9,6 +9,10 @@
 import UIKit
 import Buy
 
+protocol CartControllerDelegate {
+    func updateDashBoardController()
+}
+
 class CartController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -18,7 +22,9 @@ class CartController: UIViewController {
     @IBOutlet weak var proceedToCheckoutButton: UIButton!
     @IBOutlet weak var buyWithApplePayButton: UIButton!
     @IBOutlet weak var buttonView: UIView!
+    
     var addressFromCoreData : [Address]?
+    var delegate : CartControllerDelegate?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +52,7 @@ class CartController: UIViewController {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
+    
     func updateLeftNavBarItems() {
         
         let menuItem = UIBarButtonItem.init(title: "Clear", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CartController.clearCartButtonPressed))
@@ -61,7 +68,7 @@ class CartController: UIViewController {
             let tabItem = tabArray.objectAtIndex(1) as! UITabBarItem
             
             tabItem.badgeValue = String(CartManager.instance.lineItems.count)
-        
+        delegate?.updateDashBoardController()
         tableView.reloadData()
     }
 }
@@ -91,7 +98,7 @@ extension CartController : UITableViewDelegate,UITableViewDataSource,CartCellDel
         case 0:
             let cartCell = tableView.dequeueReusableCellWithIdentifier("CartCell", forIndexPath: indexPath) as! CartCell
             cartCell.delegate = self
-            cartCell.updateCellData(CartManager.instance.lineItems[indexPath.row])
+            cartCell.updateCellData(CartManager.instance.lineItems[indexPath.row],index: indexPath)
             return cartCell
         case 1:
             let priceCell = tableView.dequeueReusableCellWithIdentifier("PriceCell", forIndexPath: indexPath) as! PriceCell

@@ -12,7 +12,7 @@ import Buy
 import BRYXBanner
 
 protocol CartManagerDelegate {
-    func cartBadgeCountUpdatingDelegateFunction(count:Int)
+    func cartBadgeCountUpdatingDelegateFunction(count:Int,indexPath :NSIndexPath)
 }
 
 class CartManager: BUYCart {
@@ -20,6 +20,9 @@ class CartManager: BUYCart {
     
     static let instance = CartManager()
 
+//    var userId : String?
+//    var userImageUrl : String?
+    
     var totalCartPriceWitoutTax = Float()
     var totalCartTax = Float()
     var totalShippingCharge = Float()
@@ -29,6 +32,8 @@ class CartManager: BUYCart {
     var BillingAddress : Address?
     var emailAddress : String?
     var delegate : CartManagerDelegate?
+    var totalBadgeCount = 0
+
 
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
@@ -45,13 +50,21 @@ class CartManager: BUYCart {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func addProductVarientToCart(productVarient: BUYProductVariant?) {
-        
-        if let unwrappedProductVarient = productVarient{
+    func addProductVarientToCart(product: Product?,index:NSIndexPath) {
+        totalBadgeCount = 0
+        if let unwrappedProductVarient = product?.product?.variants.first{
             if unwrappedProductVarient.available{
                 CartManager.instance.addVariant(unwrappedProductVarient)
+                if let unwrappedProductQuantity = product?.productQuantity{
+                    product?.productQuantity = unwrappedProductQuantity + 1
+                }
                 
-               delegate?.cartBadgeCountUpdatingDelegateFunction(CartManager.instance.lineItems.count)
+                for item in CartManager.instance.lineItems{
+                    totalBadgeCount += (item.quantity.integerValue)
+                }
+
+                delegate?.cartBadgeCountUpdatingDelegateFunction(totalBadgeCount,indexPath:index)
+                
 //                let banner = Banner(title: "Product Added", subtitle: "", image: UIImage(named: "Icon"), backgroundColor: ConstantColor.CWGreen)
 //                banner.dismissesOnTap = true
 //                banner.show(duration: 3.0)
@@ -67,13 +80,19 @@ class CartManager: BUYCart {
         
     }
     
-    func deleteProductVarientFromCart(productVarient: BUYProductVariant?) {
-        
-        if let unwrappedProductVarient = productVarient{
+    func deleteProductVarientFromCart(product: Product?,index:NSIndexPath) {
+        totalBadgeCount = 0
+
+        if let unwrappedProductVarient = product?.product?.variants.first{
             if unwrappedProductVarient.available{
                 CartManager.instance.removeVariant(unwrappedProductVarient)
-                
-                delegate?.cartBadgeCountUpdatingDelegateFunction(CartManager.instance.lineItems.count)
+                if let unwrappedProductQuantity = product?.productQuantity{
+                    product?.productQuantity = unwrappedProductQuantity - 1
+                }
+                for item in CartManager.instance.lineItems{
+                    totalBadgeCount += (item.quantity.integerValue)
+                }
+                delegate?.cartBadgeCountUpdatingDelegateFunction(totalBadgeCount,indexPath:index)
 
             }
             else{

@@ -18,18 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAX-65-O4v">
-                                <rect key="frame" x="214" y="119" width="173" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAX-65-O4v">
+                                <rect key="frame" x="214" y="119" width="173" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="173" id="62d-b1-kQK"/>
                                 </constraints>
-                                <state key="normal" title="LinkedIn Sign in"/>
+                                <state key="normal" image="linkedInSignIn"/>
                                 <connections>
                                     <action selector="LinkedInLoginButtonPressed:" destination="j22-SQ-ZtO" eventType="touchUpInside" id="lp3-24-b89"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87L-OP-7pB" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="242" y="174" width="117" height="30"/>
+                                <rect key="frame" x="242" y="185" width="117" height="30"/>
                                 <state key="normal" title="Facebook Sign in"/>
                             </button>
                         </subviews>
@@ -42,12 +42,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnSignIn" destination="ZAX-65-O4v" id="z89-Sg-yMo"/>
                         <outlet property="facebookLoginButton" destination="87L-OP-7pB" id="EdE-qA-om2"/>
+                        <outlet property="linkedInLoginButton" destination="ZAX-65-O4v" id="huy-eE-fap"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uiq-rr-3SG" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="220" y="293"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="a4L-K7-94a">
@@ -99,4 +100,7 @@
             <point key="canvasLocation" x="1087" y="257"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="linkedInSignIn" width="215" height="41"/>
+    </resources>
 </document>

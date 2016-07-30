@@ -10,7 +10,11 @@ import UIKit
 import AVFoundation
 import Buy
 
-class DashBoardViewController: UIViewController {
+protocol DashBoardViewControllerDelagte{
+    func dismissSideMenu()
+}
+
+class DashBoardViewController: UIViewController,CartControllerDelegate{
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -20,10 +24,14 @@ class DashBoardViewController: UIViewController {
     var searchController: UISearchController!
     var resultsTableController: SearchController!
     var  cart = BUYCart()
-    
+    var isMenuOpen = Bool()
+    var delegate : DashBoardViewControllerDelagte?
+    var products = [Product]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        isMenuOpen = false
         definesPresentationContext = false
         
         getDataFromShopifyStore()
@@ -32,9 +40,21 @@ class DashBoardViewController: UIViewController {
         
     }
     
+    
     override func viewWillAppear(animated: Bool) {
         CartManager.instance.delegate = self
+        collectionView.reloadData()
+        if CartManager.instance.lineItems.count == 0{
+            clearProductQuantity()
+            collectionView.reloadData()
+        }
 
+    }
+    
+    func clearProductQuantity(){
+        for product in products{
+            product.productQuantity = 0
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,15 +77,23 @@ class DashBoardViewController: UIViewController {
          hierarchy until it finds the root view controller or one that defines a presentation context.
          */
         definesPresentationContext = true
-        self.collectionView.contentOffset = CGPointMake(0, self.searchController.searchBar.bounds.size.height);
+//        self.collectionView.contentOffset = CGPointMake(0, self.searchController.searchBar.bounds.size.height);
     }
     
     func showSideMenu(sender: AnyObject) {
-        
-        let sideMenuController = UIStoryboard.leftMenuStoryboard().instantiateViewControllerWithIdentifier("LeftMenuController")
+        let sideMenuController = UIStoryboard.leftMenuStoryboard().instantiateViewControllerWithIdentifier(String(LeftMenuController)) as! LeftMenuController
         sideMenuController.modalPresentationStyle = .OverCurrentContext
+        if !isMenuOpen{
+        isMenuOpen = true
         
         presentViewController(sideMenuController, animated: false, completion: nil)
+        }
+        else{
+            isMenuOpen = false
+//            delegate?.dismissSideMenu()
+            dismissViewControllerAnimated(false, completion: nil)
+            
+        }
     }
     
     
@@ -90,7 +118,9 @@ class DashBoardViewController: UIViewController {
         
         LoadingController.instance.showLoadingWithUserInteractionForSender(self)
         
-        let client = BUYClient(shopDomain: "frontend-dev.myshopify.com", apiKey: "4016256b9915ea5e5d8b78eb4400b966", channelId: "58768321")
+//        let client = BUYClient(shopDomain: "maria-hadrout-com.myshopify.com", apiKey: "3d0f7bce4ba54ad712d5866df544b4a7", channelId: "8") // production store
+
+        let client = BUYClient(shopDomain: "frontend-dev.myshopify.com", apiKey: "4016256b9915ea5e5d8b78eb4400b966", channelId: "58768321") // test store
         
         //        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
@@ -107,6 +137,7 @@ class DashBoardViewController: UIViewController {
         client.getProductsPage(1, completion: {(products,page,reachedEnd,error) -> Void in
             if ((error == nil) && (products != nil)){
                 self.Myproducts = products
+                self.cratedata()
                 self.collectionView.reloadData()
             }
             else{
@@ -123,6 +154,19 @@ class DashBoardViewController: UIViewController {
             }
         })
     }
+    
+    func cratedata(){
+        for i in 0..<Myproducts.count {
+            let product = Product()
+            product.product = Myproducts[i] as? BUYProduct
+            products.append(product)
+        }
+    }
+    
+    
+    func updateDashBoardController(){
+        
+    }
 }
 
 
@@ -137,7 +181,7 @@ extension DashBoardViewController:UICollectionViewDelegate,UICollectionViewDataS
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DashboardCell", forIndexPath: indexPath) as! DashboardCell
         cell.delegate = self
-        cell.updateCellData(Myproducts[indexPath.row] as? BUYProduct)
+        cell.updateCellData(products[indexPath.row],index :indexPath)
         return cell
     }
     
@@ -173,7 +217,7 @@ extension DashBoardViewController:UICollectionViewDelegate,UICollectionViewDataS
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let detailViewController = UIStoryboard.mainStoryboard().instantiateViewControllerWithIdentifier(String(DetailViewController)) as! DetailViewController
         
-        detailViewController.product = Myproducts[indexPath.row] as? BUYProduct
+        detailViewController.product = products[indexPath.row] 
         
         self.navigationController?.pushViewController(detailViewController, animated: true)
         
@@ -183,12 +227,13 @@ extension DashBoardViewController:UICollectionViewDelegate,UICollectionViewDataS
         
     }
     
-    func cartBadgeCountUpdatingDelegateFunction(count:Int){
+    func cartBadgeCountUpdatingDelegateFunction(count:Int,indexPath:NSIndexPath){
         let tabArray = self.tabBarController?.tabBar.items as NSArray!
         if tabArray != nil{
             let tabItem = tabArray.objectAtIndex(1) as! UITabBarItem
             tabItem.badgeValue = String(count)
         }
+        collectionView.reloadItemsAtIndexPaths([indexPath])
     }
 
 }

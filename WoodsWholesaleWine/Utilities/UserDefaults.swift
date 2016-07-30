@@ -17,7 +17,7 @@ private let kDeviceToken = "kDeviceToken"
 private let kUser = "kUser"
 private let kUserId = "kUserId"
 private let kEmail = "kEmail"
-private let kDisplayName = "kDisplayName"
+private let kImageUrl = "kImageUrl"
 
 
 class UserDefaults {
@@ -56,6 +56,19 @@ class UserDefaults {
         return sharedInstance.valueForKey(kUserId) as? String
     }
     
+    class func setLoggedInUserImageName(imageUrlString: String?) {
+        sharedInstance.setValue(imageUrlString, forKey: kImageUrl)
+        sharedInstance.synchronize()
+    }
+    
+    class func loggedInUserImage() -> String?{
+        return sharedInstance.valueForKey(kImageUrl) as? String
+    }
+    
+    class func setUserId(userId: String?) {
+        sharedInstance.setValue(userId, forKey: kUserId)
+        sharedInstance.synchronize()
+    }
     // MARK: temp
     
     class func loggedInEmail() -> String? {
@@ -68,12 +81,9 @@ class UserDefaults {
     }
     
     class func loggedInName() -> String? {
-        return sharedInstance.valueForKey(kDisplayName) as? String
+        return sharedInstance.valueForKey(kImageUrl) as? String
     }
     
-    class func setLoggedInName(name: String?) {
-        sharedInstance.setValue(name, forKey: kDisplayName)
-        sharedInstance.synchronize()
-    }
+   
 
 }

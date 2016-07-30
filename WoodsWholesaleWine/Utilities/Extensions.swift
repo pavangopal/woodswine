@@ -33,7 +33,7 @@ extension UIStoryboard {
 
 extension UIColor {
     class func navBarColor() -> UIColor {
-        return UIColor(red: 62/255.0, green: 61/255.0, blue: 122/255.0, alpha:1)
+        return UIColor.whiteColor()
     }
     
     class func navBarItemColor() -> UIColor{
@@ -48,8 +48,8 @@ extension UIColor {
 extension UINavigationController{
     
     func setupNavigationBar() {
-        self.navigationBar.barTintColor = UIColor.navBarColor()
-        self.navigationBar.tintColor = UIColor.navBarItemColor()
+//        self.navigationBar.barTintColor = UIColor.grayColor()
+        self.navigationBar.tintColor = UIColor.grayColor()
         self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         self.navigationItem.leftBarButtonItem?.tintColor = UIColor.navBarItemColor()
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.navBarItemColor()

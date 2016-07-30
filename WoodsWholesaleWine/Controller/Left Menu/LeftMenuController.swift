@@ -46,8 +46,19 @@ class LeftMenuController: UIViewController {
             self.view.layoutIfNeeded()
             
         })
-        
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIView.animateWithDuration(0.25, animations: { () -> Void in
+            self.xContraint.constant = -self.menuContainerView.frame.width
+            self.view.layoutIfNeeded()
+            }, completion: {finished in
+                self.dismissViewControllerAnimated(false, completion: nil)
+        })
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

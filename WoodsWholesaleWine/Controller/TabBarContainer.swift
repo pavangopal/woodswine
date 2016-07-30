@@ -8,11 +8,16 @@
 
 import UIKit
 
-class TabBarContainer: UIViewController {
+protocol TabBarContainerDelegate{
+    func logoutDelegate()
+}
+
+class TabBarContainer: UIViewController,AccountControllerDelegate {
 
     var myTabBarController: UITabBarController!
     var badgeLabel : UILabel!
-
+    var delegate : TabBarContainerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         launchTabBar()
@@ -77,6 +82,7 @@ class TabBarContainer: UIViewController {
                 let tabItem = UITabBarItem.init(title: tabName, image: AssetImage.user.image, tag: index)
                 
                 let accountController = UIStoryboard.accountStoryboard().instantiateViewControllerWithIdentifier(String(AccountController)) as! AccountController
+                accountController.delegate = self
                 accountController.tabBarItem = tabItem
                 
                 let nc = UINavigationController.init(rootViewController: accountController)
@@ -94,9 +100,14 @@ class TabBarContainer: UIViewController {
         myTabBarController = UITabBarController()
         myTabBarController.viewControllers = navControllers
         myTabBarController.tabBar.selectionIndicatorImage?.imageWithRenderingMode(.AlwaysTemplate)
-        myTabBarController.tabBar.tintColor = UIColor.navBarColor()
+        myTabBarController.tabBar.tintColor = UIColor.darkGrayColor()
         addViewController(myTabBarController)
     }
+    
+    func logoutHandler(){
+        delegate?.logoutDelegate()
+    }
+
 }
 
 

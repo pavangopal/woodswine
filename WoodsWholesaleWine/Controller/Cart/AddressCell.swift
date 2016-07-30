@@ -36,7 +36,7 @@ class AddressCell: UITableViewCell {
     func updateAddress(address:Address?){
         if let unwrappedAddress = address{
             NameLabel.text = (unwrappedAddress.firstName  ?? "") + " " + kSpaceString +  kSpaceString + (unwrappedAddress.lastName ?? "" )
-            addressLabel.text = (unwrappedAddress.address1 ?? "") + kSpaceString + (unwrappedAddress.city ?? "") + kSpaceString + (unwrappedAddress.zip ?? "")
+            addressLabel.text = (unwrappedAddress.address1 ?? "") + kSpaceString + " " + (unwrappedAddress.city ?? "") + kSpaceString + " " + (unwrappedAddress.zip ?? "")
             cityLabel.text = unwrappedAddress.phoneNumber
             zipCodeLabel.text = unwrappedAddress.email // email label
         }
@@ -45,22 +45,5 @@ class AddressCell: UITableViewCell {
     @IBAction func addNewAddressButtonPressed(sender: AnyObject) {
         delegate?.addNewAddressButtonPressed()
     }
-    
-    
-//    - (void)updateWithDictionary:(NSDictionary *)dictionary
-//    {
-//    self.address1 = dictionary[@"address1"];
-//    self.address2 = dictionary[@"address2"];
-//    self.city = dictionary[@"city"];
-//    self.company = dictionary[@"company"];
-//    self.firstName = dictionary[@"first_name"];
-//    self.lastName = dictionary[@"last_name"];
-//    self.phone = dictionary[@"phone"];
-//    
-//    self.country = dictionary[@"country"];
-//    self.countryCode = dictionary[@"country_code"];
-//    self.province = [dictionary buy_objectForKey:@"province"];
-//    self.provinceCode = [dictionary buy_objectForKey:@"province_code"];
-//    self.zip = dictionary[@"zip"];
-//    }
+
 }

@@ -352,6 +352,7 @@ class Helper {
             return nil
         }
     }
+    
         class func coreDataObjectForPredicate(predicate: NSPredicate, entityName: String) -> AnyObject {
             
             let fetchRequest = NSFetchRequest(entityName:entityName)
@@ -436,11 +437,15 @@ class Helper {
         
     }
     
-    class func fetchUser(forId forId : String) -> User?{
+    class func fetchUser(forId forId : String?) -> User?{
+        
+        guard let unwrappedUserId = forId else{
+            return nil
+        }
         
         let fetchRequest = NSFetchRequest(entityName: String(User))
         
-        let predicateForId = NSPredicate(format: "id = %@", argumentArray: [forId])
+        let predicateForId = NSPredicate(format: "id = %@", argumentArray: [unwrappedUserId])
         
         fetchRequest.predicate = predicateForId
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate

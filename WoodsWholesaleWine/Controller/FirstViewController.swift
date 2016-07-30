@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+
 
 class FirstViewController: UIViewController {
 
@@ -14,7 +16,8 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if UserDefaults.facebookAccessToken() == nil && UserDefaults.linkedInAccessToken() == nil{ 
+        
+        if UserDefaults.facebookAccessToken() == nil && UserDefaults.linkedInAccessToken() == nil{
             launchLoginController()
         }
         else{
@@ -41,6 +44,7 @@ class FirstViewController: UIViewController {
     
     func launchTabBarController() {
         tabBarContainer = TabBarContainer()
+        tabBarContainer?.delegate = self
         addViewController(tabBarContainer!)
     }
     
@@ -53,5 +57,18 @@ extension FirstViewController: PresentPhotoProtocol{
         if let topVC = getTopViewController(){
             topVC.presentViewController(controller, animated: true, completion: nil)
         }
+    }
+}
+
+extension FirstViewController:TabBarContainerDelegate{
+    func logoutDelegate() {
+        removeViewController(tabBarContainer!)
+        UserDefaults.setFacebookAccessToken(nil)
+        UserDefaults.setUserId(nil)
+        UserDefaults.setLinkedInAccessToken(nil)
+        UserDefaults.setLoggedInUserImageName(nil)
+        let loginManager: FBSDKLoginManager = FBSDKLoginManager()
+        loginManager.logOut()
+        launchLoginController()
     }
 }

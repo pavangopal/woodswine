@@ -17,6 +17,7 @@ protocol DetailHeaderViewDelegate {
 
 class DetailHeaderView: UICollectionReusableView {
     @IBOutlet weak var backGorundImageView: UIImageView!
+    @IBOutlet weak var quantityLabel: UILabel!
     
     @IBOutlet weak var cosmosView: CosmosView!
     @IBOutlet weak var wineImageView: UIImageView!
@@ -35,12 +36,16 @@ class DetailHeaderView: UICollectionReusableView {
     
     var productVariant : BUYProductVariant?
     var delegate : DetailHeaderViewDelegate?
+    var productGlobal : Product?
+    var indexGlobal = NSIndexPath()
     
-    func updateData(product:BUYProduct?){
+    func updateData(product:Product?,index:NSIndexPath){
         
-        guard let unwrappedproductData = product else{
+        guard let unwrappedproductData = product?.product else{
             return
         }
+        productGlobal = product
+        indexGlobal = index
         customizeUI()
         productVariant = unwrappedproductData.variants.first
         
@@ -80,7 +85,11 @@ class DetailHeaderView: UICollectionReusableView {
             print("Not available")
             mprPriceLabel.text = "Sold Out"
         }
-        let text = Helper.getDescriptionFromHtml(product?.htmlDescription)
+        
+        if let unwrappedProductQuantity = product?.productQuantity{
+            quantityLabel.text = String(unwrappedProductQuantity)
+        }
+        let text = Helper.getDescriptionFromHtml(unwrappedproductData.htmlDescription)
         
         productInfoTextView.attributedText = text
         productInfoTextView.layoutSubviews()
@@ -99,27 +108,27 @@ class DetailHeaderView: UICollectionReusableView {
         wishListButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 0)
 
         
-        addToCart.clipToCircularCorner()
-        addToCart.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 2, 1)
-        addToCart.layer.borderWidth = 1
-        addToCart.layer.borderColor = UIColor.lightGrayColor().CGColor
-        
-        deleteFromCart.clipToCircularCorner()
-        deleteFromCart.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 2, 1)
-        deleteFromCart.layer.borderWidth = 1
-        deleteFromCart.layer.borderColor = UIColor.lightGrayColor().CGColor
+//        addToCart.clipToCircularCorner()
+//        addToCart.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 2, 1)
+//        addToCart.layer.borderWidth = 1
+//        addToCart.layer.borderColor = UIColor.lightGrayColor().CGColor
+//        
+//        deleteFromCart.clipToCircularCorner()
+//        deleteFromCart.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 2, 1)
+//        deleteFromCart.layer.borderWidth = 1
+//        deleteFromCart.layer.borderColor = UIColor.lightGrayColor().CGColor
         
     }
     
     
     @IBAction func deleteFromCartButtonPressed(sender: AnyObject) {
-        CartManager.instance.deleteProductVarientFromCart(productVariant)
+        CartManager.instance.deleteProductVarientFromCart(productGlobal,index:indexGlobal )
         delegate?.updateBadgeCount()
 
     }
     
     @IBAction func addToCartButtonPressed(sender: AnyObject) {
-        CartManager.instance.addProductVarientToCart(productVariant)
+        CartManager.instance.addProductVarientToCart(productGlobal,index: indexGlobal)
         delegate?.updateBadgeCount()
 
     }

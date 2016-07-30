@@ -24,6 +24,8 @@ class CartCell: UITableViewCell {
     
     var delegate : CartCellDelegate?
     var productVariant : BUYProductVariant?
+    var productGlobal : Product?
+    var indexGlobal = NSIndexPath()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,9 +38,11 @@ class CartCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func updateCellData(item : BUYCartLineItem){
+    func updateCellData(item : BUYCartLineItem,index:NSIndexPath){
         productVariant = item.variant
+        productGlobal?.product = productVariant?.product
         productName.text = item.variant.product.title
+        indexGlobal = index
         if let price = item.variant.price{
             priceLabel.text = "$" + kSpaceString + String(price)
         }
@@ -48,13 +52,13 @@ class CartCell: UITableViewCell {
     }
     
     @IBAction func addToCartButtonPressed(sender: AnyObject) {
-        CartManager.instance.addProductVarientToCart(productVariant)
+        CartManager.instance.addProductVarientToCart(productGlobal,index: indexGlobal)
         delegate?.updateCart()
 
     }
     
     @IBAction func deleteFromCartButtonPressed(sender: AnyObject) {
-        CartManager.instance.deleteProductVarientFromCart(productVariant)
+        CartManager.instance.deleteProductVarientFromCart(productGlobal,index: indexGlobal)
         delegate?.updateCart()
     }
 }
