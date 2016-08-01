@@ -6,6 +6,7 @@ pod 'SKPhotoBrowser'
 pod 'BRYXBanner'
 pod "Mobile-Buy-SDK"
 pod 'Cosmos', '~> 1.2'
+pod 'PayPal-iOS-SDK'
 
 use_frameworks!
 

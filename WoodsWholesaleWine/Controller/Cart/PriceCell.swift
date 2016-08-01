@@ -42,6 +42,7 @@ class PriceCell: UITableViewCell {
             
             break
         case 1:
+            // problem here
             totalTax = 0
             for item in CartManager.instance.lineItems{
                 totalTax = totalTax + (item.variant.taxable.floatValue * item.quantity.floatValue)

@@ -122,9 +122,10 @@ class DetailHeaderView: UICollectionReusableView {
     
     
     @IBAction func deleteFromCartButtonPressed(sender: AnyObject) {
+        if productGlobal?.productQuantity != 0{
         CartManager.instance.deleteProductVarientFromCart(productGlobal,index:indexGlobal )
         delegate?.updateBadgeCount()
-
+        }
     }
     
     @IBAction func addToCartButtonPressed(sender: AnyObject) {

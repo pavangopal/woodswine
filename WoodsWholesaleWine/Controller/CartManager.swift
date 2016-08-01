@@ -22,7 +22,11 @@ class CartManager: BUYCart {
 
 //    var userId : String?
 //    var userImageUrl : String?
+    let client = BUYClient(shopDomain: "frontend-dev.myshopify.com", apiKey: "4016256b9915ea5e5d8b78eb4400b966", channelId: "58768321")
     
+//            let client = BUYClient(shopDomain: "maria-hadrout-com.myshopify.com", apiKey: "3d0f7bce4ba54ad712d5866df544b4a7", channelId: "8") // production store
+
+
     var totalCartPriceWitoutTax = Float()
     var totalCartTax = Float()
     var totalShippingCharge = Float()
@@ -33,6 +37,8 @@ class CartManager: BUYCart {
     var emailAddress : String?
     var delegate : CartManagerDelegate?
     var totalBadgeCount = 0
+    var shippingRates : AnyObject?
+    var paymentToken : String?
 
 
 //    override func viewDidLoad() {

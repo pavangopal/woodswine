@@ -40,7 +40,6 @@ class LeftMenuController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
         UIView.animateWithDuration(0.25, animations: { () -> Void in
             self.xContraint.constant = 0
             self.view.layoutIfNeeded()

@@ -45,7 +45,9 @@ class DashboardCell: UICollectionViewCell {
          productVariant = unwrappedproductData.variants.first
         productGlobal = product
         indexPathGlobal = index
+        if unwrappedproductData.images.count > 0{
         WineImageView.setImageWithOptionalUrl(NSURL(string: unwrappedproductData.images[0].src),placeholderImage: UIImage())
+        }
         wineNameLabel.text = unwrappedproductData.title
         
         if let price = productVariant?.price{
@@ -65,13 +67,17 @@ class DashboardCell: UICollectionViewCell {
     }
     
     @IBAction func addToCartButtonPressed(sender: UIButton) {
+
         CartManager.instance.addProductVarientToCart(productGlobal,index:indexPathGlobal)
+        
 //        delegate?.updateBadgeCount()
     }
     
 
     @IBAction func deleteFromCartButtonPressed(sender: UIButton) {
+        if productGlobal?.productQuantity != 0{
         CartManager.instance.deleteProductVarientFromCart(productGlobal,index:indexPathGlobal)
+        }
 //        delegate?.updateBadgeCount()
 
     }

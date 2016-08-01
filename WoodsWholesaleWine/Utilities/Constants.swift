@@ -141,3 +141,9 @@ public enum TabName : String {
     case Account = "Account"
     
 }
+
+public enum FilterBy : String{
+    case ByRegion = "Region"
+    case ByYear = "Year"
+    case ByVarient = "Varient"
+}

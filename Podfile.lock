@@ -3,9 +3,16 @@ PODS:
   - BRYXBanner (0.5.2):
     - BRYXBanner/Core (= 0.5.2)
   - BRYXBanner/Core (0.5.2)
+  - CardIO (5.3.2)
   - Cosmos (1.2.3)
   - Kingfisher (2.4.2)
   - Mobile-Buy-SDK (1.2.6)
+  - PayPal-iOS-SDK (2.14.4):
+    - PayPal-iOS-SDK/CardIO (= 2.14.4)
+    - PayPal-iOS-SDK/Core (= 2.14.4)
+  - PayPal-iOS-SDK/CardIO (2.14.4):
+    - CardIO (~> 5.3.2)
+  - PayPal-iOS-SDK/Core (2.14.4)
   - ReachabilitySwift (2.3.3)
   - SKPhotoBrowser (2.0.0)
 
@@ -15,18 +22,21 @@ DEPENDENCIES:
   - Cosmos (~> 1.2)
   - Kingfisher
   - Mobile-Buy-SDK
+  - PayPal-iOS-SDK
   - ReachabilitySwift
   - SKPhotoBrowser
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   BRYXBanner: 5f0911d52e0a77e088f7ea7ddcdebd02afb7828a
+  CardIO: 92c45caef0d986c4a303a7afba0c9b76ff2b1f6e
   Cosmos: efddd01b729956ad6335bc58bc92e5735a1d12a3
   Kingfisher: 05bf8d04408aaa70fcd2c8c81b9f1d0f1ad313dd
   Mobile-Buy-SDK: bd8ea554e683ef47c8a0d5b4e7b36e93e0875c8c
+  PayPal-iOS-SDK: 44721dc89bfe64ea8c8437bc5224314a8d38e3fe
   ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
   SKPhotoBrowser: 6a4ef17ea9e4e7358df29c2e552d9f33657dcd8a
 
-PODFILE CHECKSUM: a4ac6741135b86dd306bf70cc7a5b635e1dce416
+PODFILE CHECKSUM: b486c0e388e0bacdd8d155def6c75a727fabb538
 
 COCOAPODS: 1.0.1

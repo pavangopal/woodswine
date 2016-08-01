@@ -67,7 +67,15 @@ class AccountController: UIViewController {
     }
 
     @IBAction func logoutButtonPressed(sender: AnyObject) {
-        delegate?.logoutHandler()
+        let alertController = UIAlertController.init(title: "Confirm Logout", message: "Log out of the app?", preferredStyle: UIAlertControllerStyle.Alert)
+        let noAction = UIAlertAction.init(title: "No", style: UIAlertActionStyle.Cancel, handler: nil)
+        let yesAction = UIAlertAction.init(title: "Yes", style: UIAlertActionStyle.Destructive, handler: { (alert: UIAlertAction!) -> Void in
+            self.delegate?.logoutHandler()
+
+        })
+        alertController.addAction(noAction)
+        alertController.addAction(yesAction)
+        presentViewController(alertController, animated: true, completion: nil)
     }
 
     @IBAction func editButtonPressed(sender: AnyObject) {

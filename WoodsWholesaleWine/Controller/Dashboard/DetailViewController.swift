@@ -25,8 +25,14 @@ class DetailViewController: UIViewController {
     }
     override func viewWillAppear(animated: Bool) {
         CartManager.instance.delegate = self
-        
+        if CartManager.instance.lineItems.count == 0{
+            product?.productQuantity = 0
+            collectionView.reloadData()
+        }
     }
+    
+  
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
